@@ -30,5 +30,6 @@ module Printshop
         g.fixture_replacement :factory_girl, :dir => "spec/factories" 
     end
 
+    I18n.enforce_available_locales = false
   end
 end
