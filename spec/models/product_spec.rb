@@ -1,9 +1,21 @@
 require 'spec_helper'
 
-describe Products do
+describe Product do
 
 	it "has a valid factory" do
 		create(:product).should be_valid
+	end
+
+	it "has many sizes" do
+		should have_many(:sizes)
+	end
+
+	it "has many finishes" do
+		should have_many(:finishes)
+	end
+
+	it "has many finishes" do
+		should have_many(:quantities)
 	end
 
 	describe "#create" do

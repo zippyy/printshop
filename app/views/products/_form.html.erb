@@ -1,0 +1,52 @@
+<%= nested_form_for @product do |f| %>
+  <% if @product.errors.any? %>
+   <div class="error_messages">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= f.fields_for :sizes do |size_field| %>
+    <p class="size-fields">
+      <%= size_field.label :size, "Size" %>
+      <%= size_field.text_field :size, class: "size" %>
+      <%= size_field.link_to_remove fa_icon("times") %> 
+    </p>
+  <% end %>
+  <%= f.link_to_add fa_icon("plus"), :sizes %>
+
+  
+  <%= f.fields_for :finishes do |finish_field| %>
+    <p class="finish-fields">
+      <%= finish_field.label :finish, "Finish" %>
+      <%= finish_field.text_field :finish, class: "finish" %>
+      <%= finish_field.link_to_remove fa_icon("times") %>
+
+    </p>
+  <% end %>
+    <%= f.link_to_add "Add Finish", :finishes %>
+
+  <%= f.fields_for :quantities do |quantity_field| %>
+       <p class="quantity-fields">
+      <%= quantity_field.label :quantity, "Quantity" %>
+      <%= quantity_field.text_field :quantity, class: "quantity" %>
+      <%= quantity_field.link_to_remove fa_icon("times") %>
+
+  <% end %>
+    </p>
+    <%= f.link_to_add "Add Quantity", :quantities %>
+
+
+
+
+  <p><%= f.submit "Submit" %></p>
+<% end %>

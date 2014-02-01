@@ -9,6 +9,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem 'sorcery'
+gem 'nested_form'
+gem "font-awesome-rails"
 
 group :development do
 	gem 'capistrano'

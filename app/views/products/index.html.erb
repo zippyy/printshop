@@ -1,0 +1,14 @@
+<% @products.each do |product| %>
+<%= product.name %> <br>
+	<% product.sizes.each do |size| %>
+		<%= size.size %> <br>
+	<% end %>
+	<% product.quantities.each do |quantity| %>
+		<%= quantity.quantity %> <br>
+	<% end %>
+	<% product.finishes.each do |finish|%>
+		<%= finish.finish %> <br>
+	<% end %>
+<br><br><br>
+<% end %>
+ads

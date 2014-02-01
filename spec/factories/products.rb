@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :product, :class => 'Products' do
+  factory :product do
     name "Test Product"
   end
 end

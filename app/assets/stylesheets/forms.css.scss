@@ -1,0 +1,32 @@
+input{
+	border:0; 
+	padding: .5em; 
+	font-size:1em; 
+	font-family:Arial, sans-serif; 
+	color: $regular-text; 
+	border:solid 1px #ccc; 
+	margin:0 0 20px; 
+	width:300px;
+}
+
+.size{
+	width: 150px;
+}
+
+.finish{
+	width: 200px;
+}
+
+.quantity{
+	width: 150px;
+}
+
+.finish-fields{
+	background: yellow;
+}
+.quantity-fields{
+	background: pink;
+}
+.size-fields{
+	background: green;
+}

@@ -1,9 +1,13 @@
 require 'spec_helper'
 
-describe Sizes do
+describe Size do
 
 	it "has a valid factory" do
 		create(:size).should be_valid
+	end
+
+	it "belongs to a product" do
+		should belong_to(:product)
 	end
 
 	describe "#create" do

@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :size do
-    size "5 X 7"
+  factory :finish do
     product_id 1
+    finish "UV"
   end
 end
