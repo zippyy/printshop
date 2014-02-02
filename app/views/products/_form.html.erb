@@ -10,42 +10,38 @@
     </div>
   <% end %>
 
-
-  <p>
-    <%= f.label :name %><br />
+   <div class="prod-name">
+    <%= f.label :name, "Product Name" %><br />
     <%= f.text_field :name %>
-  </p>
-  <%= f.fields_for :sizes do |size_field| %>
-    <p class="size-fields">
-      <%= size_field.label :size, "Size" %>
+  </div>
+
+  <div class="prod-attributes">
+    Sizes
+    <%= f.fields_for :sizes do |size_field| %>
       <%= size_field.text_field :size, class: "size" %>
       <%= size_field.link_to_remove fa_icon("times") %> 
-    </p>
-  <% end %>
-  <%= f.link_to_add fa_icon("plus"), :sizes %>
+    <% end %>
+    <%= f.link_to_add fa_icon("plus"), :sizes %>
+  </div>
 
-  
-  <%= f.fields_for :finishes do |finish_field| %>
-    <p class="finish-fields">
-      <%= finish_field.label :finish, "Finish" %>
+  <div class="prod-attributes">
+    Finishes
+    <%= f.fields_for :finishes do |finish_field| %>
       <%= finish_field.text_field :finish, class: "finish" %>
       <%= finish_field.link_to_remove fa_icon("times") %>
+    <% end %>
+    <%= f.link_to_add fa_icon("plus"), :finishes %>
+  </div>
 
-    </p>
-  <% end %>
-    <%= f.link_to_add "Add Finish", :finishes %>
 
-  <%= f.fields_for :quantities do |quantity_field| %>
-       <p class="quantity-fields">
-      <%= quantity_field.label :quantity, "Quantity" %>
+  <div class="prod-attributes">
+    Quantities
+    <%= f.fields_for :quantities do |quantity_field| %>
       <%= quantity_field.text_field :quantity, class: "quantity" %>
       <%= quantity_field.link_to_remove fa_icon("times") %>
-
-  <% end %>
-    </p>
-    <%= f.link_to_add "Add Quantity", :quantities %>
-
-
+    <% end %>
+    <%= f.link_to_add fa_icon("plus"), :quantities %>
+  </div>
 
 
   <p><%= f.submit "Submit" %></p>
