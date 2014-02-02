@@ -1,0 +1,1 @@
+$('#finish_id').after('<br><%=j label_tag :quantity_id, "Quantity" %> <%=j select_tag :quantity_id, options_from_collection_for_select(@quantities, :id, :quantity), :prompt => "Quanity" %>');

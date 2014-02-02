@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201150910) do
+ActiveRecord::Schema.define(version: 20140202135545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "size_id"
+    t.integer  "finish_id"
+    t.integer  "quantity_id"
+    t.integer  "price_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exits", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "finishes", force: true do |t|
     t.integer  "product_id"

@@ -19,6 +19,7 @@ group :development do
 	gem 'rspec-rails'
 	gem 'shoulda-matchers'
 	gem 'binding_of_caller'
+	gem 'pry'
 end
 
 group :test do

@@ -1,0 +1,9 @@
+<h1>CartItems#n
+	ew</h1>
+<p>Find me in app/views/cart_items/new.html.erb</p>
+
+<%= form_tag @cart_item do |f| %>
+	<%= label_tag :product_id, "Product" %>
+  <%= select_tag :product_id, options_from_collection_for_select(@products, :id, :name), :prompt => "Product" %>
+	<br>
+<% end %>

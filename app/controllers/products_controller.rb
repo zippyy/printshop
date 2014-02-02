@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-  	  params.require(:product).permit(:name, sizes_attributes: [:id, :product_id, :size, :_destroy], finishes_attributes: [:id, :product_id, :finish, :_destroy], quantities_attributes: [:id, :product_id, :quantity, :_destroy] )
+	  params.require(:product).permit(:name, sizes_attributes: [:id, :product_id, :size, :_destroy], finishes_attributes: [:id, :product_id, :finish, :_destroy], quantities_attributes: [:id, :product_id, :quantity, :_destroy] )
   end
 
   def question_params
