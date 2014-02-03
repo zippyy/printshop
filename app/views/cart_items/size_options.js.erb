@@ -1,1 +1,1 @@
-$('#product_id').after('<br><%=j label_tag :size_id, "Size" %> <%=j select_tag :size_id, options_from_collection_for_select(@sizes, :id, :size), :prompt => "Size" %>');
+$('#product_id').after('<br><%=j select_tag :size_id, options_from_collection_for_select(@sizes, :id, :size), :prompt => "Size" %>');
