@@ -1,15 +1,49 @@
 <div class="add-item">
-	<%= form_tag(@cart_item) do |f| %>
-	  <%= select_tag :product_id, options_from_collection_for_select(@products, :id, :name), :prompt => "Product" %>
+	<%= form_tag @cart_item do |f| %>
+	
+		<%= label_tag :product_id %>
+		<%= select_tag :product_id, options_for_select(@products, "id", "name") %>
+
 		<br>
-	<% end %>
+		
+		<br>
+		<%= f.label :finish_id %>
+	  <%= f.text_field :finish_id %>
+		<br>
+		<%= f.label :quantity_id %>
+	  <%= f.text_field :quantity_id %>
+		<br>
+			<%= f.label :price_id %>
+	  <%= f.text_field :price_id %>
+		<br>
+		
+		<%= f.submit "add item" %>
+
+
+	<% end %>	
+
+
+
 </div>
 <div class="show-item">
 	
 <% if @cart_items.empty? %>
-empty
+	
+	
+the cart is empty
+
 <% else %>
-asdf
+
+		<% @cart_items.each do |item|	 %>
+<div class="cart-item">
+		prod<%= item.product_id %> <br>
+		size<%= item.size_id %> <br>
+		quant<%= item.quantity_id %> <br>
+		finsih<%= item.finish_id %> <br>
+		price<%= item.price_id %>
+	</div>
+
+		<% end %>
 
 <% end %>
 
