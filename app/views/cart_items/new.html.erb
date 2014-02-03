@@ -1,8 +1,17 @@
-<h1>CartItems#n
-	ew</h1>
-<p>Find me in app/views/cart_items/new.html.erb</p>
+<div class="add-item">
+	<%= form_tag(@cart_item) do |f| %>
+	  <%= select_tag :product_id, options_from_collection_for_select(@products, :id, :name), :prompt => "Product" %>
+		<br>
+	<% end %>
+</div>
+<div class="show-item">
+	
+<% if @cart_items.empty? %>
+empty
+<% else %>
+asdf
 
-<%= form_tag @cart_item do |f| %>
-  <%= select_tag :product_id, options_from_collection_for_select(@products, :id, :name), :prompt => "Product" %>
-	<br>
 <% end %>
+
+
+</div>

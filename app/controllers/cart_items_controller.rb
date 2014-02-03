@@ -1,10 +1,12 @@
 class CartItemsController < ApplicationController
+  
   def index
   	@cart_items = CartItem.all
   end
 
   def new
   	@cart_item = CartItem.new
+    @cart_items = CartItem.all
   	@products = Product.all
   end
 
@@ -46,10 +48,16 @@ class CartItemsController < ApplicationController
     end
   end
 
+  def submit_options
+    respond_to do |format|
+       format.js {  }
+    end    
+  end
+
   private
 
   def cart_item_params
-  	params.require(:product).permit(:product_id, :size_id, :finish_id, :quantity_id, :price_id)
+  	params.fetch(:cart_item, {}).permit(:product_id, :size_id, :finish_id, :quantity_i, :price_id)
   end
 
 
