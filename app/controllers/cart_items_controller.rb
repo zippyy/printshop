@@ -33,14 +33,14 @@ class CartItemsController < ApplicationController
     end
   end
 
-  # def finish_options
-  #   @product = Product.find_by_id(params[:product_id])
-  #   @finishes = @product.finishes
+  def finish_options
+    @product = Product.find_by_id(params[:product_id])
+    @finishes = @product.finishes.map { |e| [e.finish, e.id] }
 
-  #   respond_to do |format|
-  #      format.js {  }
-  #   end
-  # end
+    respond_to do |format|
+       format.js {  }
+    end
+  end
 
 
   # def quantity_options

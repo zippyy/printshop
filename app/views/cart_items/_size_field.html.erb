@@ -1,3 +1,2 @@
-
-<br> <%= label  @cart_item,:size_id ,id: "size_select" %><%= select @cart_item, "cart_item[size_id]", @sizes, prompt: '' ,id: "size_select"  %>
+<%= label  @cart_item,:size_id, class: "size_select_label" %><%= select @cart_item, "cart_item[size_id]", @sizes, {prompt: ""} , {class: "size_select"} %>
 

@@ -1,1 +1,2 @@
-$('#size_id').after('<br><%=j select_tag :finish_id, options_from_collection_for_select(@finishes, :id, :finish), :prompt => "Finish" %>');
+$('.size_select').after('<div class="select-element"><%=j render partial: "finish_field" %></div> ' );
+return false;

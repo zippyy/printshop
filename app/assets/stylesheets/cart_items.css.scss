@@ -1,7 +1,9 @@
 .add-item{
 	float: left;
-	width: 50%;
+	width: 40%;
+	padding-right: 10%;
 	background: orange;
+	text-align: right;
 }
 .show-item{
 	float: right;
@@ -11,4 +13,9 @@
 .cart-item{
 	margin: 5px;
 	background: yellow;
+}
+
+.select-element{
+	background: blue;
+	margin: 5px;
 }
