@@ -1,2 +1,3 @@
-<br> <%= @f.label :size_id %><%= @f.select :size_id, @sizes, prompt: ''  %>
+
+<br> <%= label  @cart_item,:size_id ,id: "size_select" %><%= select @cart_item, "cart_item[size_id]", @sizes, prompt: '' ,id: "size_select"  %>
 

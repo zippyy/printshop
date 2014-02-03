@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$('#cart_item_product_id').on('change', function() {
-		$('#size_id, #size_id_label, #finish_id, #finish_id_label, #quantity_id, #quantity_id_label').remove();
+		$('#_size_id, #_size_id_label, #finish_id, #finish_id_label, #quantity_id, #quantity_id_label').remove();
 		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({
 			url: "/size_options",
