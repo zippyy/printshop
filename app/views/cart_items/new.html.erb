@@ -1,20 +1,22 @@
 <div class="add-item">
-	<%= form_tag @cart_item do |f| %>
-	
-		<%= label_tag :product_id %>
-		<%= select_tag :product_id, options_for_select(@products, "id", "name") %>
+	<%= form_for @cart_item do |f| %>
+		<% @f=f %>
+		<%= f.label :product_id %>
+		<%= f.select :product_id, @products, prompt: ''   %>
 
 		<br>
 		
+
 		<br>
 		<%= f.label :finish_id %>
-	  <%= f.text_field :finish_id %>
+	  <%= f.select :finish_id, @finishes, prompt: '' %>
 		<br>
 		<%= f.label :quantity_id %>
-	  <%= f.text_field :quantity_id %>
+	  <%= f.select :quantity_id, @quantities, prompt: '' %>
 		<br>
-			<%= f.label :price_id %>
-	  <%= f.text_field :price_id %>
+		<%= f.label :price_id %>
+		<%= f.text_field :price_id %>
+
 		<br>
 		
 		<%= f.submit "add item" %>

@@ -1,2 +1,3 @@
-$('#cart_item_product_id').after('<br> <%= f.label :size_id %><%=j f.select :size_id, @sizes, prompt: ''  %>');
+$('#cart_item_product_id').after('<%=j render partial: "size_field" %>' );
 return false;
+
