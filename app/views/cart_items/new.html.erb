@@ -1,19 +1,13 @@
 <div class="add-item">
+	
 	<%= form_for @cart_item do |f| %>
 		<% @f=f %>
 		<%= f.label :product_id %>
-		<%= f.select :product_id, @products, prompt: ''   %>
+		<%= f.select :product_id, @products, prompt: '' %>
 
 
 
-		
-		
-
-
-
-	<% end %>	
-
-
+	<% end %>
 
 </div>
 <div class="show-item">

@@ -1,0 +1,2 @@
+<%= label  @cart_item,:quantity_id, class: "quantity_select_label" %><%= select @cart_item, "cart_item[quantity_id]", @quantities, { include_blank: true } , {class: "quantity_select"} %>
+

@@ -1,1 +1,7 @@
-$('#finish_id').after('<br><%=j select_tag :quantity_id, options_from_collection_for_select(@quantities, :id, :quantity), :prompt => "Quantity" %>');
+// console.log(($('quantity-element').length >= 1));
+if ($('.quantity-element').length <= 1) {
+	alert('hey buddy');
+$('.finish-element').after('<div class="quantity-element"> <%=j render partial: "quantity_field" %></div>' );
+return false;
+
+}
