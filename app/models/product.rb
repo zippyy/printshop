@@ -6,6 +6,8 @@ class Product < ActiveRecord::Base
 	has_many :finishes, :inverse_of => :product
 	has_many :quantities, :inverse_of => :product
 
+	has_many :cart_items
+
   accepts_nested_attributes_for :sizes, allow_destroy: true, reject_if: proc { |attributes| attributes['size'].blank? }
   accepts_nested_attributes_for :finishes, allow_destroy: true, reject_if: proc { |attributes| attributes['finish'].blank? }
   accepts_nested_attributes_for :quantities, allow_destroy: true, reject_if: proc { |attributes| attributes['quantity'].blank? }

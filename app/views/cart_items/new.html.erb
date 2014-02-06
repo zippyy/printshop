@@ -29,32 +29,25 @@
 		</div>
 </div> 
 <br><br><br>
-
-
 	<% end %>
 
 </div>
 <div class="show-item">
-	
-<% if @cart_items.empty? %>
-	
-	
-the cart is empty
+	<br><br><br>
+	<div class="order-summary">
+		<h2 class="title">Order Summary</h2>
 
-<% else %>
-
-		<% @cart_items.each do |item|	 %>
-<div class="cart-item">
-		prod<%= item.product_id %> <br>
-		size<%= item.size_id %> <br>
-		quant<%= item.quantity_id %> <br>
-		finsih<%= item.finish_id %> <br>
-		price<%= item.price_id %>
-	</div>
-
+		<% if @cart_items.empty? %>
+			The cart is empty
+		<% else %>
+			<ol>
+				<% @cart_items.each do |item|	 %>
+					<div class="cart-item">
+						<li><%= item.quantity_quantity %> <%= item.product_name.pluralize %> ( <%= item.size_size%>, <%= item.finish_finish %> ) <div class="price">$<%= item.price_id %></div>	</li>
+						
+					</div>
+				<% end %>
+			</ol>
 		<% end %>
-
-<% end %>
-
-
+	</div>
 </div>

@@ -9,12 +9,26 @@
 .show-item{
 	float: right;
 	width: 50%;
-	background: #ff00ff;
+	height:400px;
+	// background: #ff00ff;
 }
 
 .cart-item{
-	margin: 5px;
-	background: yellow;
+	margin: 0 auto;
+	padding: .5em 1em; 
+	font-size:1.2em; 
+	width: 80%;
+	font-family:Arial, sans-serif; 
+	color: $regular-text;
+	border-bottom: 1px solid #e6e6e6;
+}
+.order-summary{
+	margin: 0 auto;
+	border-radius: 10px;
+	border: 1px solid #e6e6e6;
+}
+.price{
+	float: right;
 }
 .size-element{
 }
