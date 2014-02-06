@@ -1,2 +1,3 @@
-<%= label  @cart_item,:size_id, class: "size_select_label" %><%= select @cart_item, "cart_item[size_id]", @sizes, { include_blank: true } , {class: "size_select"} %>
+<%= label  @cart_item,:size_id, class: "size_select_label" %>
+<%= select @cart_item, :size_id , @sizes, { include_blank: true } , {class: "size_select"} %>
 

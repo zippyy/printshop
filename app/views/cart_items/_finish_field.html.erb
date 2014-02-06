@@ -1,3 +1,4 @@
-<%= label  @cart_item,:finish_id, class: "finish_select_label" %><%= select @cart_item, "cart_item[finish_id]", @finishes, {include_blank: true } , {class: "finish_select"} %>
+<%= label  @cart_item,:finish_id, class: "finish_select_label" %>
+<%= select @cart_item, :finish_id, @finishes, {include_blank: true } , {class: "finish_select"} %>
 
 

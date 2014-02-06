@@ -8,7 +8,7 @@ class CartItemsController < ApplicationController
   	@cart_item = CartItem.new
     @cart_items = CartItem.all
   	@products = Product.all.map { |e| [e.name, e.id] }
-    # @sizes = Size.all.map { |e| [e.size, e.id] }
+    @sizes = Size.all.map { |e| [e.size, e.id] }
     @quantities = Quantity.all.map { |e| [e.quantity, e.id] }
     @finishes = Finish.all.map { |e| [e.finish, e.id] }
     @f=nil

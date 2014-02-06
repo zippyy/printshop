@@ -1,7 +1,10 @@
 $(document).ready(function(){
 	
 	$('#cart_item_product_id').on('change', function(event) {
-		$('.size_select, .size_select_label, .finish_select, .finish_select_label, .quantity_select, .quantity_select_label').remove();
+		
+		$('#cart_item_finish_id, #cart_item_quantity_id').prop('disabled', true);
+		$('#cart_item_finish_id, #cart_item_quantity_id').val(''); 
+
 		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({
 			url: "/size_options",
@@ -12,8 +15,7 @@ $(document).ready(function(){
 		event.preventDefault()
 	});
 
-	$(document).on('change', ".size_select", function(event) {
-		$('.finish_select, .finish_select_label, .quantity_select, .quantity_select_label').remove();
+	$(document).on('change', "#cart_item_size_id", function(event) {
 		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({
 			url: "/finish_options",
@@ -24,8 +26,8 @@ $(document).ready(function(){
 		event.preventDefault()
 	});
 
-	$(document).off('change').on('change', '.finish_select', function(event) {
-		$('.quantity_select, .quantity_select_label').remove();
+	$(document).on('change', '#cart_item_finish_id', function(event) {
+
 		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({url: "/quantity_options",
 			format: 'js',
@@ -35,16 +37,16 @@ $(document).ready(function(){
 		event.preventDefault()
 	});
 
-	//add price when prices worked out
+	// //add price when prices worked out
 
-	$(document).on('change', '#quantity_id', function(event) {
-		$.ajax({
-			url: "/submit_options",
-			format: 'js',
-			type: "GET",
-		})
-		event.preventDefault()
-	});
+	// $(document).on('change', '#quantity_id', function(event) {
+	// 	$.ajax({
+	// 		url: "/submit_options",
+	// 		format: 'js',
+	// 		type: "GET",
+	// 	})
+	// 	event.preventDefault()
+	// });
 
 
 });
