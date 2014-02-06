@@ -52,11 +52,11 @@ class CartItemsController < ApplicationController
     end
   end
 
-  # def submit_options
-  #   respond_to do |format|
-  #      format.js {  }
-  #   end    
-  # end
+  def submit_options
+    respond_to do |format|
+       format.js {  }
+    end    
+  end
 
   private
 

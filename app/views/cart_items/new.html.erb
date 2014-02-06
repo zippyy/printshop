@@ -1,6 +1,8 @@
 <div class="add-item">
-	
+	<br><br><br>
 	<%= form_for @cart_item do |f| %>
+<div class="order-form">
+	<h2 class="title">Create Order</h2>
 
 		<div class="product-element">
 			<%= f.label :product_id %>
@@ -8,7 +10,7 @@
 		</div>
 		<div class="size-element">
 			<%= f.label :size_id %>
-			<%= f.select :size_id, @sizes, {prompt: ''} , {disabled: true} %> <br>
+			<%= f.select :size_id, @sizes, {prompt: ''} , {disabled: true} %>
 		</div>
 
 		<div class="finish-element">
@@ -25,7 +27,8 @@
 			<%= f.label :price_id %>
 			<%= f.text_field :price_id %>
 		</div>
-
+</div> 
+<br><br><br>
 
 
 	<% end %>

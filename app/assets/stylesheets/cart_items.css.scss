@@ -1,8 +1,7 @@
 .add-item{
 	float: left;
-	width: 40%;
-	padding-right: 10%;
-	background: orange;
+	width: 50%;
+	// background: orange;
 	text-align: right;
 	margin: 0;
 }
@@ -17,26 +16,17 @@
 	margin: 5px;
 	background: yellow;
 }
-
 .size-element{
-	background: blue;
-	// margin: 5px;
 }
-
 .finish-element{
-	background: red;
-	// margin: 5px;
 }
-
 .quantity-element{
-	background: green;
-	// margin: 5px;
 }
-
 .price-element{
-	background: #ff00ff;
-	// margin: 5px;
 }
 .product-element{
-	background: tomato;
+}
+.price-element{
+}
+.button-element{
 }
