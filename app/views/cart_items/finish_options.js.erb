@@ -1,1 +1,3 @@
-$('#size_id').after('<br><%=j select_tag :finish_id, options_from_collection_for_select(@finishes, :id, :finish), :prompt => "Finish" %>');
+$('#cart_item_finish_id').prop('disabled', false);
+$('#cart_item_finish_id').html('<%=j render partial: "finish_field" %>' );
+return false;

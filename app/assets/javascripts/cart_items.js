@@ -1,43 +1,59 @@
 $(document).ready(function(){
 	
-	$('#product_id').on('change', function() {
-		$('#size_id, #size_id_label, #finish_id, #finish_id_label, #quantity_id, #quantity_id_label').remove();
-		var params = "product_id=" + $('#product_id').val();
+	$('#cart_item_product_id').on('change', function(event) {
+		
+		$('#cart_item_finish_id, #cart_item_quantity_id').prop('disabled', true);
+		$('#cart_item_finish_id, #cart_item_quantity_id').val(''); 
+		$('.button-element').remove();
+		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({
 			url: "/size_options",
 			format: 'js',
 			type: "GET",
-			data: params,
+			data: params
 		})
+		event.preventDefault()
 	});
 
-	$(document).on('change', "#size_id", function() {
-		$('#finish_id, #finish_id_label, #quantity_id, #quantity_id_label').remove();
-		var params = "product_id=" + $('#product_id').val();
+	$(document).on('change', "#cart_item_size_id", function(event) {
+
+		$('#cart_item_finish_id, #cart_item_quantity_id').prop('disabled', true);
+		$('#cart_item_quantity_id').val(''); 
+		$('.button-element').remove();
+
+		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({
 			url: "/finish_options",
 			format: 'js',
 			type: "GET",
 			data: params,
 		})
+		event.preventDefault()
 	});
 
-	$(document).on('change', '#finish_id', function() {
-		$('#quantity_id, #quantity_id_label').remove()
-		var params = "product_id=" + $('#product_id').val();
+	$(document).on('change', '#cart_item_finish_id', function(event) {
+		$('#cart_item_quantity_id').prop('disabled', true);
+		$('#cart_item_quantity_id').val(''); 
+		$('.button-element').remove();
+		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({url: "/quantity_options",
 			format: 'js',
 			type: "GET",
 			data: params,
 		})
+		event.preventDefault()
 	});
 
-	$(document).on('change', '#quantity_id', function() {
+	// //add price when prices worked out
+
+	$(document).on('change', '#cart_item_quantity_id', function(event) {
+		$('.button-element').remove();
 		$.ajax({
 			url: "/submit_options",
 			format: 'js',
 			type: "GET",
 		})
+		event.preventDefault()
 	});
 
 

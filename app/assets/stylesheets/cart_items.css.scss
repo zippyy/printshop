@@ -1,10 +1,32 @@
 .add-item{
 	float: left;
 	width: 50%;
-	background: orange;
+	// background: orange;
+	text-align: right;
+	margin: 0;
 }
+
 .show-item{
 	float: right;
 	width: 50%;
 	background: #ff00ff;
+}
+
+.cart-item{
+	margin: 5px;
+	background: yellow;
+}
+.size-element{
+}
+.finish-element{
+}
+.quantity-element{
+}
+.price-element{
+}
+.product-element{
+}
+.price-element{
+}
+.button-element{
 }
