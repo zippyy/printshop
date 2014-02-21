@@ -1,8 +1,6 @@
 Printshop::Application.routes.draw do
 
-  get "category/new"
-  get "category/edit"
-  get "category/delete"
+  resources :categories
   resources :products
   resources :cart_items
 
