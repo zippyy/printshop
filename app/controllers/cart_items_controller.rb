@@ -27,7 +27,7 @@ class CartItemsController < ApplicationController
   def size_options
     @product = Product.find_by_id(params[:product_id])
     @sizes = @product.sizes.map { |e| [e.size, e.id] }
-
+    
     respond_to do |format|
        format.js {  }
     end
@@ -46,7 +46,6 @@ class CartItemsController < ApplicationController
   def quantity_options
     @product = Product.find_by_id(params[:product_id])
     @quantities = @product.quantities.map { |e| [e.quantity, e.id] }
-
     respond_to do |format|
        format.js {  }
     end
@@ -63,6 +62,5 @@ class CartItemsController < ApplicationController
   def cart_item_params
   	params.require(:cart_item).permit(:product_id, :size_id, :finish_id, :quantity_id, :price_id)
   end
-
 
 end
