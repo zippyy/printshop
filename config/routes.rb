@@ -1,7 +1,6 @@
 Printshop::Application.routes.draw do
 
-  get "prices/new"
-  get "prices/index"
+  resources :prices
   resources :categories
   resources :products
   resources :cart_items

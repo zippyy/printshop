@@ -4,5 +4,6 @@ class Quantity < ActiveRecord::Base
 
 	belongs_to :product,  inverse_of: :quantities
 	has_many :cart_items
+	has_many :prices
 		
 end

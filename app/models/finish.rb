@@ -4,5 +4,6 @@ class Finish < ActiveRecord::Base
 
 	belongs_to :product,  inverse_of: :finishes
 	has_many :cart_items
+	has_many :prices
 
 end

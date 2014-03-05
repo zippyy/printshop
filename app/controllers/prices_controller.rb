@@ -5,14 +5,15 @@ class PricesController < ApplicationController
   end
 
   def new
-  	@price = Price.new
+  	@products = Product.all
+    @price = Price.new
   end
 
 	def create
-	@product = Price.new(price_params)
+	@price = Price.new(price_params)
 
-		if @product.save
-			redirect_to products_url
+		if @price.save
+			redirect_to new_price_url
 		else
 		render :new
 		end

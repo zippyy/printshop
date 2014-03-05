@@ -5,11 +5,20 @@ class Product < ActiveRecord::Base
 	has_many :sizes, :inverse_of => :product
 	has_many :finishes, :inverse_of => :product
 	has_many :quantities, :inverse_of => :product
-
 	has_many :cart_items
+	has_many :prices
 
   accepts_nested_attributes_for :sizes, allow_destroy: true, reject_if: proc { |attributes| attributes['size'].blank? }
   accepts_nested_attributes_for :finishes, allow_destroy: true, reject_if: proc { |attributes| attributes['finish'].blank? }
   accepts_nested_attributes_for :quantities, allow_destroy: true, reject_if: proc { |attributes| attributes['quantity'].blank? }
 	
+	def has_price?(size, finish, quantity)
+		Price.where(:product_id => self.id, :size_id => size.id, :finish_id => finish.id, :quantity_id => quantity.id).exists?
+	end
+
+	def price(size, finish, quantity)
+		price =	Price.find_by(:product_id => self.id, :size_id => size.id, :finish_id => finish.id, :quantity_id => quantity.id)
+		price.price
+	end
+
 end
