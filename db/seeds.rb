@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Product.destroy_all
+CartItem.destroy_all
 
 
 # p = Product.create!({

@@ -1,14 +1,19 @@
-<% @products.each do |product| %>
-<%= product.name %> <br>
-	<% product.sizes.each do |size| %>
-		<%= size.size %> <br>
+<h1>products list</h1>
+<table>
+	<% @products.each do |product| %>
+		<% product.sizes.each do |size| %>
+			<% product.finishes.each do |finish|%>
+			<% product.quantities.each do |quantity| %>
+				<tr>
+				<td><%= product.name %> (<%= product.id %>)</td> 
+				<td><%= size.size %> (<%= size.id %>)</td>
+				<td><%= finish.finish %>(<%= finish.id %>)</td>
+				<td><%= quantity.quantity %>(<%= quantity.id %>)</td>
+				</tr>
+			<% end %>
+		<% end %>
 	<% end %>
-	<% product.quantities.each do |quantity| %>
-		<%= quantity.quantity %> <br>
-	<% end %>
-	<% product.finishes.each do |finish|%>
-		<%= finish.finish %> <br>
-	<% end %>
-<br><br><br>
 <% end %>
-ads
+</table>
+
+
