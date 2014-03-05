@@ -10,7 +10,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem 'sorcery'
 gem 'nested_form'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'best_in_place'
 
 group :development do
 	gem 'capistrano'

@@ -16,9 +16,8 @@ class Product < ActiveRecord::Base
 		Price.where(:product_id => self.id, :size_id => size.id, :finish_id => finish.id, :quantity_id => quantity.id).exists?
 	end
 
-	def price(size, finish, quantity)
-		price =	Price.find_by(:product_id => self.id, :size_id => size.id, :finish_id => finish.id, :quantity_id => quantity.id)
-		price.price
+	def get_price(size, finish, quantity)
+		Price.find_by(:product_id => self.id, :size_id => size.id, :finish_id => finish.id, :quantity_id => quantity.id)
 	end
 
 end

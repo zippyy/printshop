@@ -5,25 +5,25 @@
 			<% product.finishes.each do |finish|%>
 			<% product.quantities.each do |quantity| %>
 				<tr>
-				<td><%= product.name %> (<%= product.id %>)</td> 
-				<td><%= size.size %> (<%= size.id %>)</td>
-				<td><%= finish.finish %>(<%= finish.id %>)</td>
-				<td><%= quantity.quantity %>(<%= quantity.id %>)</td>
-				<td>
-					<% if product.has_price?(size, finish, quantity) %>
-						$<%= product.price(size, finish, quantity) %>
-					<% else %>
-						<%= form_for @price do |f| %>
-						<%= f.hidden_field :product_id, :value => product.id %>
-						<%= f.hidden_field :size_id, :value => size.id %>
-						<%= f.hidden_field :finish_id, :value => finish.id %>
-						<%= f.hidden_field :quantity_id, :value => quantity.id %>
-						<%= f.text_field :price %>
-						<%= f.submit "Add Price" %>
+					<td><%= product.name %></td> 
+					<td><%= size.size %></td>
+					<td><%= finish.finish %></td>
+					<td><%= quantity.quantity %></td>
+					<td id="price-cell">
+						<% if product.has_price?(size, finish, quantity) %>
+							<% price = product.get_price(size, finish, quantity) %>
+							$<%= price.price %>
+						<% else %>
+							<%= form_for @price do |f| %>
+								<%= f.hidden_field :product_id, :value => product.id %>
+								<%= f.hidden_field :size_id, :value => size.id %>
+								<%= f.hidden_field :finish_id, :value => finish.id %>
+								<%= f.hidden_field :quantity_id, :value => quantity.id %>
+								<%= f.text_field :price, class: "price-text-area" %>
+								<%= f.submit "Add Price", class: "price-button" %>
+							<% end %>
 						<% end %>
-					<% end %>
-				</td>
-
+					</td>
 				</tr>
 			<% end %>
 		<% end %>
@@ -32,3 +32,4 @@
 </table>
 
 
+fa_icon("pencil-square-o")
