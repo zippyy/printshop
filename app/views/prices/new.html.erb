@@ -13,7 +13,10 @@
 					<td id="<%= price_row %>" class="price-cell" data-product="<%= product.id %>" data-size="<%= size.id %>" data-finish="<%= finish.id %>" data-quantity="<%= quantity.id %>">
 						<% if product.has_price?(size, finish, quantity) %>
 							<% price = product.get_price(size, finish, quantity) %>
-							$<%= price.price %> 
+							$<span id="price-val-<%= price_row %>"><%= price.price %></span> 
+							<div class="edit-price-button"> 
+									<%= fa_icon("pencil-square-o")  %>
+							</div>
 						<% else %>
 							<%= render "form", :locals => { price_row: price_row } %>
 						<% end %>
@@ -27,4 +30,3 @@
 </table>
 
 
-fa_icon("pencil-square-o")

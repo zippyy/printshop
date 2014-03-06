@@ -28,16 +28,30 @@ class PricesController < ApplicationController
   end
 
   def edit
-    @price = Price.find(params[:id])
+
+    @price = Price.find_by(:product_id => params[:product_id].to_i,
+    :size_id => params[:size_id].to_i,
+    :finish_id => params[:finish_id].to_i,
+    :quantity_id => params[:quantity_id].to_i)
+    params[:price_info] = @price.to_json
+
+    respond_to do |format|
+      format.js {   }
+    end
   end
 
   def update
-    @price = Price.find(params[:id])
-  
-    if @price.update_attributes(price_params)
-      redirect_to new_price_url
-    else
-      render :edit
+    @price = Price.find_by(:product_id => params[:product_id].to_i,
+      :size_id => params[:size_id].to_i,
+      :finish_id => params[:finish_id].to_i,
+      :quantity_id => params[:quantity_id].to_i)
+
+    respond_to do |format|
+      if @price.update_attributes(:price => params[:price].to_i)
+        format.js {  }
+      else
+        render :new
+      end
     end
   end
 
