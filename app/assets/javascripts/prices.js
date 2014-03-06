@@ -1,5 +1,5 @@
  $(document).ready(function () {
-	$( ".price-button" ).on( "click", function() {
+	$( ".price-button" ).on( "click", function(event) {
 		cell = $( this ).parent()[0];
 		id = cell.id;
 		price = $("#input-field-" + id).val();
@@ -12,8 +12,8 @@
 			url: "/prices",
 			format: 'js',
 			type: "POST",
-			data: { price: price, product_id: product_id, size_id: size_id, finish_id: finish_id, quantity_id: quantity_id }
+			data: { price: price, product_id: product_id, size_id: size_id, finish_id: finish_id, quantity_id: quantity_id, id: id }
 		})
-
+		event.preventDefault();
 	});
 });

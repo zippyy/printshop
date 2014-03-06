@@ -15,14 +15,12 @@ class PricesController < ApplicationController
     :product_id => params[:product_id].to_i,
     :size_id => params[:size_id].to_i,
     :finish_id => params[:finish_id].to_i,
-    :quantity_id => params[:quantity_id]
+    :quantity_id => params[:quantity_id].to_i
     ) 
 
     respond_to do |format|
   		if @price.save
-        # format.html {redirect_to new_price_url}
-        format.json {}
-  			format.js { }
+  			format.js { render "create", :locals => {:id => params[:id]} }
   		else
     		render :new
   		end
