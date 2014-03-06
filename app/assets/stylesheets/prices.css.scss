@@ -1,3 +1,24 @@
 .price-cell{
 	font-weight: bold;
 }
+.pricing-table{
+	margin: 0 auto;
+}
+
+.price{
+	background: orange;
+	width: 50%;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	font-size: 18px;
+	text-align: center;
+}
+.edit-price-button{
+	background: #ff00ff;
+	height: 30px;
+	width: 50%;
+	float: right;
+	line-height: 30px;	
+	vertical-align: center;
+}

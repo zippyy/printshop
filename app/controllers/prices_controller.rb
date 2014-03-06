@@ -1,10 +1,6 @@
 class PricesController < ApplicationController
 
   def index
-  	@prices = Price.all
-  end
-
-  def new
   	@products = Product.all
     @price = Price.new
   end
