@@ -12,16 +12,9 @@
 					<td id="price-cell">
 						<% if product.has_price?(size, finish, quantity) %>
 							<% price = product.get_price(size, finish, quantity) %>
-							$<%= price.price %>
+							$<%= price.price %> <%=  %>
 						<% else %>
-							<%= form_for @price do |f| %>
-								<%= f.hidden_field :product_id, :value => product.id %>
-								<%= f.hidden_field :size_id, :value => size.id %>
-								<%= f.hidden_field :finish_id, :value => finish.id %>
-								<%= f.hidden_field :quantity_id, :value => quantity.id %>
-								<%= f.text_field :price, class: "price-text-area" %>
-								<%= f.submit "Add Price", class: "price-button" %>
-							<% end %>
+							<%= render "form", :locals => { product: product, size: size, finish: finish, quantity: quantity } %>
 						<% end %>
 					</td>
 				</tr>
