@@ -1,8 +1,4 @@
-<%= form_for @price, remote: true do |f| %>
-	<%= f.hidden_field :product_id, :value => locals[:product].id %>
-	<%= f.hidden_field :size_id, :value => locals[:size].id %>
-	<%= f.hidden_field :finish_id, :value => locals[:finish].id %>
-	<%= f.hidden_field :quantity_id, :value => locals[:quantity].id %>
-	<%= f.text_field :price, class: "price-text-area", id: "input-field-#{locals[:price_row]}"%>
-	<%= f.submit "Add Price", class: "price-button" %>
-<% end %>
+<%= text_field_tag "input-field-#{locals[:price_row]}", nil, class: "price-text-area"%>
+<div class="price-button">
+	Add Price
+</div>

@@ -10,11 +10,17 @@ class PricesController < ApplicationController
   end
 
 	def create
-  	@price = Price.new(price_params)
+    @price = Price.new( 
+    :price => params[:price].to_i,
+    :product_id => params[:product_id].to_i,
+    :size_id => params[:size_id].to_i,
+    :finish_id => params[:finish_id].to_i,
+    :quantity_id => params[:quantity_id]
+    ) 
 
     respond_to do |format|
   		if @price.save
-        format.html {redirect_to new_price_url}
+        # format.html {redirect_to new_price_url}
         format.json {}
   			format.js { }
   		else
