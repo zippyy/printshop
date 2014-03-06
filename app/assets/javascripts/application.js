@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery_nested_form
+  
+  $(document).ready(function () {
+  	$( ".price-button" ).on( "click", function() {
+		 	cell = $( this ).parent().parent();
+		 	id = cell[0].id;
+			field = $("#input-field-" + id); 
+		  console.log(field.val());
+		  cell.empty();
+		});
+  });

@@ -10,13 +10,17 @@ class PricesController < ApplicationController
   end
 
 	def create
-	@price = Price.new(price_params)
+  	@price = Price.new(price_params)
 
-		if @price.save
-			redirect_to new_price_url
-		else
-		render :new
-		end
+    respond_to do |format|
+  		if @price.save
+        format.html {redirect_to new_price_url}
+        format.json {}
+  			format.js { }
+  		else
+    		render :new
+  		end
+    end
   end
 
   def edit

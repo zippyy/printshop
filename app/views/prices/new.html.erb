@@ -1,6 +1,7 @@
 <h1>prices list</h1>
 <table>
 	<% @products.each do |product| %>
+		<% price_row = 1 %> 
 		<% product.sizes.each do |size| %>
 			<% product.finishes.each do |finish|%>
 			<% product.quantities.each do |quantity| %>
@@ -9,13 +10,14 @@
 					<td><%= size.size %></td>
 					<td><%= finish.finish %></td>
 					<td><%= quantity.quantity %></td>
-					<td id="price-cell">
+					<td id="<%= price_row %>" class="price-cell">
 						<% if product.has_price?(size, finish, quantity) %>
 							<% price = product.get_price(size, finish, quantity) %>
 							$<%= price.price %> <%=  %>
 						<% else %>
-							<%= render "form", :locals => { product: product, size: size, finish: finish, quantity: quantity } %>
+							<%= render "form", :locals => { product: product, size: size, finish: finish, quantity: quantity, price_row: price_row } %>
 						<% end %>
+				<% price_row+=1 %>
 					</td>
 				</tr>
 			<% end %>
