@@ -11,7 +11,6 @@ gem 'unicorn'
 gem 'sorcery'
 gem 'nested_form'
 gem 'font-awesome-rails'
-gem 'best_in_place'
 gem 'font-kit-rails'
 
 group :development do
@@ -22,6 +21,7 @@ group :development do
 	gem 'shoulda-matchers'
 	gem 'binding_of_caller'
 	gem 'debugger'
+	gem 'seed_dump'
 end
 
 group :test do
