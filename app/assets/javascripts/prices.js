@@ -26,8 +26,10 @@
 		finish_id = $('#' + row_id).data("finish");
 		quantity_id = $('#' + row_id).data("quantity");
 
+
+
 		$.ajax({
-			url: "price/edit",
+			url: "prices/" + 1 + "/edit",
 			format: 'js',
 			type: "GET",
 			data: { 
@@ -52,7 +54,7 @@
 		quantity_id = $('#' + row_id).data("quantity");
 
 		$.ajax({
-			url: "update",
+			url: "prices/update",
 			format: 'js',
 			type: "PUT",
 			data: { 

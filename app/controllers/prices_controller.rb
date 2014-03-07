@@ -5,6 +5,7 @@ class PricesController < ApplicationController
     @price = Price.new
   end
 
+
 	def create
     @price = Price.new( 
     :price => params[:price].to_i,

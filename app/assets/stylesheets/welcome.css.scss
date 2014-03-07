@@ -1,3 +1,26 @@
+.logo{
+	float: left;
+}
+
+.black{
+	background: $black;
+}
+
+.nav-bar{
+	height: 2.5em;
+	line-height: 2.5em;	
+	background: $black;
+	font-family: $nav-bar-font;
+	font-size: 1.3em;
+	color: $header-text;
+	text-align: right;
+}
+
+.tag-line{
+	font-size: .8em;
+	float: left;
+	color: $header-text;
+}
 .slide-images{
 	background: $image-background;
 	background-image: image-url("slides/slide1.png");
@@ -6,5 +29,27 @@
 }
 
 .welcome-content{
-	min-height: 500px;
+	// min-height: 700px;
+	text-align: center;
+	padding: 2em;
+}
+
+.feature-item{
+	display: inline-block;
+	background: $black;
+	height: 150px;
+	width: 200px;
+	color: $header-text;
+	font-size: 1.5em;
+	font-family: $header-font;
+	text-align: center;
+	margin: 1.5em 1em;
+	padding: 1em 1em;
+	 vertical-align:top;
+}
+
+.feature-blurb{
+	font-size: .7em;
+	bottom: 0;
+	position: relative;
 }

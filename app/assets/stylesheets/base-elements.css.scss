@@ -2,6 +2,13 @@ body{
 	font-family: $regular-font;
 }
 
+.header {
+	height: 7.5em;
+	background: $header-background;
+	color: $header-text;
+	font-family: $header-font;
+}
+
 footer{
 	background: $black;
 	color: $footer-text;
@@ -10,7 +17,6 @@ footer{
 	height: 3em;
 	line-height: 3em;
 	text-align: center;
-
 }
 
 h1 {
