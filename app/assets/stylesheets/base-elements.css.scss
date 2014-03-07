@@ -1,5 +1,16 @@
 body{
-	font-family: Arial;
+	font-family: $regular-font;
+}
+
+footer{
+	background: $black;
+	color: $footer-text;
+	font-family: $footer-font;
+	width: 100%;
+	height: 3em;
+	line-height: 3em;
+	text-align: center;
+
 }
 
 h1 {
@@ -27,3 +38,4 @@ a:active{
 	color: $regular-text;
 	text-decoration: none;
 }
+

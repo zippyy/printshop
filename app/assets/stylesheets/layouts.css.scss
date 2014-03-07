@@ -3,10 +3,21 @@
 	margin: 0 auto;
 }
 
-.prod-attributes{
-	width: 33%;
-	float: left;
+.full-row{
+	width: 100%
 }
-.prod-name{
-	width: 100%;
+
+.menu-bar{
+	font-family: $menu-bar-font;
+	background: $black;
+	color: $top-bar;
+	height: 2em;
+	line-height: 2em;
 }
+
+.top-bar{
+	font-family: $top-bar-font;
+	background: $black;
+	color: $top-bar;
+}
+

@@ -1,20 +1,21 @@
-<h1>products list</h1>
-<table>
-	<% @products.each do |product| %>
-		<% product.sizes.each do |size| %>
-			<% product.finishes.each do |finish|%>
-			<% product.quantities.each do |quantity| %>
-				<tr>
-				<td><%= product.name %> (<%= product.id %>)</td> 
-				<td><%= size.size %> (<%= size.id %>)</td>
-				<td><%= finish.finish %>(<%= finish.id %>)</td>
-				<td><%= quantity.quantity %>(<%= quantity.id %>)</td>
-				<td>price</td>
-				</tr>
+<div class="main-grid">
+	<h1>products list</h1>
+	<table>
+		<% @products.each do |product| %>
+			<% product.sizes.each do |size| %>
+				<% product.finishes.each do |finish|%>
+				<% product.quantities.each do |quantity| %>
+					<tr>
+					<td><%= product.name %> (<%= product.id %>)</td> 
+					<td><%= size.size %> (<%= size.id %>)</td>
+					<td><%= finish.finish %>(<%= finish.id %>)</td>
+					<td><%= quantity.quantity %>(<%= quantity.id %>)</td>
+					<td>price</td>
+					</tr>
+				<% end %>
 			<% end %>
 		<% end %>
 	<% end %>
-<% end %>
-</table>
-
+	</table>
+</div>
 

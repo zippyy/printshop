@@ -1,0 +1,10 @@
+.slide-images{
+	background: $image-background;
+	background-image: image-url("slides/slide1.png");
+	height: 450px;
+	background-size: 100% auto;
+}
+
+.welcome-content{
+	min-height: 500px;
+}

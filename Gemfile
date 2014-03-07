@@ -12,6 +12,7 @@ gem 'sorcery'
 gem 'nested_form'
 gem 'font-awesome-rails'
 gem 'best_in_place'
+gem 'font-kit-rails'
 
 group :development do
 	gem 'capistrano'
