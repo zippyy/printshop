@@ -1,8 +1,8 @@
 <div class="main-grid">	
 	<h1 class="title">Prices List</h1>
 	<table class="pricing-table">
+		<% price_row = 1 %> 
 		<% @products.each do |product| %>
-			<% price_row = 1 %> 
 			<% product.sizes.each do |size| %>
 				<% product.finishes.each do |finish|%>
 				<% product.quantities.each do |quantity| %>
@@ -15,13 +15,10 @@
 						<td id="<%= price_row %>" class="price-cell" data-product="<%= product.id %>" data-size="<%= size.id %>" data-finish="<%= finish.id %>" data-quantity="<%= quantity.id %>">
 
 							<% if product.has_price?(size, finish, quantity) %>
-							
 								<div class="price">
 									<% price = product.get_price(size, finish, quantity) %>
 									$<span id="price-val-<%= price_row %>"><%= price.price %></span> 
 								</div>
-
-
 								<div class="edit-price-button"> 
 										<%= fa_icon("pencil-square-o")  %>
 								</div>
