@@ -5,9 +5,9 @@ development:
   pool: 5
   password:
 
-test:
+production:
   adapter: postgresql
   encoding: unicode
-  database: printshop_test
+  database: printshop_p
   pool: 5
   password:

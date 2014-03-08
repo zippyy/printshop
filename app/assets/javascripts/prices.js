@@ -2,18 +2,15 @@
 	$( ".price-button" ).on( "click", function(event) {
 		cell = $( this ).parent()[0];
 		id = cell.id;
-		console.log(cell);
-		console.log(id);
 
 		price = $("#input-field-" + id).val();
 		product_id = $('#' + id).data("product");
-		console.log(product_id);
 		size_id = $('#' + id).data("size");
 		finish_id = $('#' + id).data("finish");
 		quantity_id = $('#' + id).data("quantity");
 
 		$.ajax({
-			url: "/prices",
+			url: "prices",
 			format: 'js',
 			type: "POST",
 			data: { price: price, product_id: product_id, size_id: size_id, finish_id: finish_id, quantity_id: quantity_id, id: id }
