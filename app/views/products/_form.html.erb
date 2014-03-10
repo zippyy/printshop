@@ -10,10 +10,13 @@
     </div>
   <% end %>
 
-   <div class="prod-name">
+   <div class="prod-name blue-test">
     <%= f.label :name, "Product Name" %><br />
     <%= f.text_field :name %>
+  <%= f.select :custom, [["", nil], ['Special', true], ['Standard', false]] %>
   </div>
+
+<br> <br>
 
   <div class="prod-attributes">
     Sizes

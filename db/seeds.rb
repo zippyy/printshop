@@ -6,8 +6,8 @@ Size.destroy_all
 Price.destroy_all
 
 Product.create!([
-  {name: "Postcard", category_id: nil},
-  {name: "Business Cards", category_id: nil}
+  {name: "Postcard", custom: false},
+  {name: "Business Cards", custom: false}
 ])
 
 postcard = Product.find_by(name: "Postcard")
