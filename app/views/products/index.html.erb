@@ -1,15 +1,31 @@
 <div class="main-grid">
-	<h1>products list</h1> <br>
+	<h1>Products List</h1> <br>
 	<table> 
 		<% @products.each do |product| %>
 			<tr>
-				<td><%= link_to product.name, edit_product_url(product) %>	
-					</td> 
-				<td>
-					<%= "Special" if product.custom == true  %>
-					<%= "Standard" if product.custom == false %>
-				</td>
-			</tr>
+				<%= link_to product.name, edit_product_url(product) %> <br>	
+					<%= "Special" if product.custom == true  %> 
+					<%= "Standard" if product.custom == false %> <br>
+			
+
+					<% if product.has_characteristic?(product.sizes) %> 
+						<% product.sizes.each do |size| %>
+							<%= size.size %> <br>
+						<% end %>
+					<% end %>
+					<% if product.has_characteristic?(product.finishes) %>
+						<% product.finishes.each do |finish| %>
+							<%= finish.finish %> <br>
+						<% end %>
+					<% end %>
+					<% if product.has_characteristic?(product.quantities) %>
+						<% product.quantities.each do |quantity| %>
+							<%= quantity.quantity %> <br>
+						<% end %>
+					<% end %>
+
+				
+			<br>
 		<% end %>
 	</table>
 </div>
