@@ -1,32 +1,50 @@
 <div class="main-grid">
 	<h1>Products List</h1> <br>
-	<table> 
 		<% @products.each do |product| %>
+	<table class="product-table"> 
 			<tr>
-				<%= link_to product.name, edit_product_url(product) %> <br>	
-					<%= "Special" if product.custom == true  %> 
-					<%= "Standard" if product.custom == false %> <br>
-			
-
+				<td class="product-name"><%= link_to product.name, edit_product_url(product) %> </td>
+				<td><%= "Special" if product.custom == true  %><%= "Standard" if product.custom == false %> </td>
+				<td> <%= link_to "Edit", edit_product_url(product) %> | <%= button_to "delete", product, :method=>:delete, :class=>:destroy %></td>
+			</tr>
+			<tr>
+				<td>
 					<% if product.has_characteristic?(product.sizes) %> 
-						<% product.sizes.each do |size| %>
-							<%= size.size %> <br>
-						<% end %>
+						
+						<table class="characteristic-table">
+							<% product.sizes.each do |size| %>
+								<tr>
+								<td><%= size.size %></td>
+								</tr>
+							<% end %>
+						</table>
 					<% end %>
+				</td>
+				<td>
 					<% if product.has_characteristic?(product.finishes) %>
-						<% product.finishes.each do |finish| %>
-							<%= finish.finish %> <br>
-						<% end %>
+						<table class="characteristic-table">
+							<% product.finishes.each do |finish| %>
+								<tr>
+								 <td><%= finish.finish %></td>
+								 </tr>
+							<% end %>
+						</table>
 					<% end %>
+				</td>
+				<td>
 					<% if product.has_characteristic?(product.quantities) %>
-						<% product.quantities.each do |quantity| %>
-							<%= quantity.quantity %> <br>
-						<% end %>
+						<table class="characteristic-table">
+							<% product.quantities.each do |quantity| %>
+								<tr>
+									<td><%= quantity.quantity %></td>
+								</tr>
+							<% end %>
+						</table>
 					<% end %>
-
-				
-			<br>
-		<% end %>
+				</td>
+				</tr>
 	</table>
+	<hr>
+		<% end %>
 </div>
 
