@@ -1,16 +1,34 @@
-.prod-attributes{
+#product-attributes{
+	background: orange;
+	float:left;
+	width: 100%;
+}
+.product-attribute{
 	width: 33%;
 	float: left;
+	text-align: center;
 }
-.prod-name{
+.product-name-type {
 	width: 100%;
 }
 
+.product-submit{
+	width: 100%;
+	clear: both;
+	height: 60px;
+	line-height: 60px;
+}
 
 .product-table{
-	margin: 2em 0;
-	border: 0;
+	margin: 2em auto;
+	border: none;
+	text-align: center;
 }
+
+.product-table td{
+	border: none;
+}
+
 
 .product-name{
 	font-size: 1.2em;
@@ -18,7 +36,16 @@
 .characteristic-table{
 	margin: 0;
 	border: none;
+	margin: 0 auto;
 }
-.product-table td{
-	border: none
+.characteristic-table td{
+	text-align: left;
+}
+.product-button{
+	width: 100px;
+}
+
+.product-button-inline{
+	display: inline;
+	float: left;
 }

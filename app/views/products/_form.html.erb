@@ -10,42 +10,44 @@
     </div>
   <% end %>
 
-   <div class="prod-name blue-test">
+   <div class="product-name-type blue-test">
     <%= f.label :name, "Product Name" %><br />
     <%= f.text_field :name %>
   <%= f.select :custom, [["", nil], ['Special', true], ['Standard', false]] %>
   </div>
 
-<br> <br>
+  <div id="product-attributes">
+      <div class="product-attribute">
+        Sizes <br> <br>
+        <%= f.fields_for :sizes do |size_field| %>
+          <%= size_field.text_field :size, class: "size" %>
+          <%= size_field.link_to_remove fa_icon("times") %> 
+        <% end %>
+        <%= f.link_to_add fa_icon("plus"), :sizes %>
+      </div>
 
-  <div class="prod-attributes">
-    Sizes
-    <%= f.fields_for :sizes do |size_field| %>
-      <%= size_field.text_field :size, class: "size" %>
-      <%= size_field.link_to_remove fa_icon("times") %> 
-    <% end %>
-    <%= f.link_to_add fa_icon("plus"), :sizes %>
+      <div class="product-attribute">
+        Finishes <br> <br>
+        <%= f.fields_for :finishes do |finish_field| %>
+          <%= finish_field.text_field :finish, class: "finish" %>
+          <%= finish_field.link_to_remove fa_icon("times") %>
+        <% end %>
+        <%= f.link_to_add fa_icon("plus"), :finishes %>
+      </div>
+
+
+      <div class="product-attribute">
+        Quantities <br> <br>
+        <%= f.fields_for :quantities do |quantity_field| %>
+          <%= quantity_field.text_field :quantity, class: "quantity" %>
+          <%= quantity_field.link_to_remove fa_icon("times") %>
+        <% end %>
+        <%= f.link_to_add fa_icon("plus"), :quantities %>
+      </div>
+
+</div>
+  <div class="product-submit">
+    <%= f.submit "Submit", class: "product-button" %>
   </div>
-
-  <div class="prod-attributes">
-    Finishes
-    <%= f.fields_for :finishes do |finish_field| %>
-      <%= finish_field.text_field :finish, class: "finish" %>
-      <%= finish_field.link_to_remove fa_icon("times") %>
-    <% end %>
-    <%= f.link_to_add fa_icon("plus"), :finishes %>
-  </div>
-
-
-  <div class="prod-attributes">
-    Quantities
-    <%= f.fields_for :quantities do |quantity_field| %>
-      <%= quantity_field.text_field :quantity, class: "quantity" %>
-      <%= quantity_field.link_to_remove fa_icon("times") %>
-    <% end %>
-    <%= f.link_to_add fa_icon("plus"), :quantities %>
-  </div>
-
-
-  <p><%= f.submit "Submit" %></p>
 <% end %>
+
