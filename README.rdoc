@@ -2,3 +2,15 @@
 
 Beginning of a site for a print and design shop.
 
+Now running live at 
+
+www.pathann.com/printshop
+
+Working pages area
+
+www.pathann.com/printshop/
+www.pathann.com/printshop/products
+www.pathann.com/printshop/prices
+www.pathann.com/printshop/cart_items/new
+
+Work is continuing.  Live version was setup so client can see the progress.
