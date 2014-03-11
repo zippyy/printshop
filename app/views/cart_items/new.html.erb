@@ -9,24 +9,32 @@
 				<%= f.label :product_id %>
 				<%= f.select :product_id, @products, prompt: '' %>
 			</div>
-			<div class="size-element">
-				<%= f.label :size_id %>
-				<%= f.select :size_id, @sizes, {prompt: ''} , {disabled: true} %>
+
+			<div class="custom_text_area">
+				
+				
 			</div>
 
-			<div class="finish-element">
-				<%= f.label :finish_id %>
-				<%= f.select :finish_id, @finishes, {prompt: ''} , {disabled: true} %>
-			</div>
+			<div class="standard-elements">
+				<div class="size-element">
+					<%= f.label :size_id %>
+					<%= f.select :size_id, @sizes, {prompt: ''} , {disabled: true} %>
+				</div>
 
-			<div class="quantity-element">
-				<%= f.label :quantity_id %>
-				<%= f.select :quantity_id, @quantities, {prompt: ''} , {disabled: true} %>
-			</div>
+				<div class="finish-element">
+					<%= f.label :finish_id %>
+					<%= f.select :finish_id, @finishes, {prompt: ''} , {disabled: true} %>
+				</div>
 
-				<div class="price-element">
-				<%= f.label :price_id %>
-				<%= f.text_field :price_id %>
+				<div class="quantity-element">
+					<%= f.label :quantity_id %>
+					<%= f.select :quantity_id, @quantities, {prompt: ''} , {disabled: true} %>
+				</div>
+
+					<div class="price-element">
+					<%= f.label :price_id %>
+					<%= f.text_field :price_id %>
+				</div>
 			</div>
 	</div> 
 	<br><br><br>

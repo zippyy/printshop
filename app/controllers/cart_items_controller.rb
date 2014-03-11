@@ -24,17 +24,29 @@ class CartItemsController < ApplicationController
   	end
   end
 
-  def size_options
-    @product = Product.find_by_id(params[:product_id])
-    @sizes = @product.sizes.map { |e| [e.size, e.id] }
+  def product_type
+    @product = Product.find(params[:product_id])
     
     respond_to do |format|
-       format.js {  }
+      if @product.custom
+        format.js {}
+      else
+        size_options
+      end
+    end
+  end
+
+  def size_options
+    @product = Product.find(params[:product_id])
+    @sizes = @product.sizes.map { |e| [e.size, e.id] }
+   
+    respond_to do |format|
+      format.js {  }
     end
   end
 
   def finish_options
-    @product = Product.find_by_id(params[:product_id])
+    @product = Product.find(params[:product_id])
     @finishes = @product.finishes.map { |e| [e.finish, e.id] }
 
     respond_to do |format|
@@ -44,7 +56,7 @@ class CartItemsController < ApplicationController
 
 
   def quantity_options
-    @product = Product.find_by_id(params[:product_id])
+    @product = Product.find(params[:product_id])
     @quantities = @product.quantities.map { |e| [e.quantity, e.id] }
     respond_to do |format|
        format.js {  }

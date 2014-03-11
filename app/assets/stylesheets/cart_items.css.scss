@@ -1,7 +1,6 @@
 .add-item{
 	float: left;
 	width: 50%;
-	// background: orange;
 	text-align: right;
 	margin: 0;
 }
@@ -10,7 +9,6 @@
 	float: right;
 	width: 50%;
 	height:400px;
-	// background: #ff00ff;
 }
 
 .cart-item{
@@ -30,17 +28,7 @@
 .price{
 	float: right;
 }
-.size-element{
-}
-.finish-element{
-}
-.quantity-element{
-}
-.price-element{
-}
-.product-element{
-}
-.price-element{
-}
-.button-element{
+
+.standard-elements{
+	background: #00ffff;
 }

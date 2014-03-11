@@ -13,7 +13,7 @@
    <div class="product-name-type">
     <%= f.label :name, "Product Name" %><br />
     <%= f.text_field :name %>
-    <%= f.select :custom, [['Standard', false],['Custom', true]] %>
+    <%= f.select :custom, [["", false],['Standard', true],['Custom', false]] %>
   </div>
 
   <div id="product-attributes">
