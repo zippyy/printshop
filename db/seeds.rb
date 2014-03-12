@@ -7,11 +7,13 @@ Price.destroy_all
 
 Product.create!([
   {name: "Postcard", custom: false},
-  {name: "Business Cards", custom: false}
+  {name: "Business Card", custom: false},
+  {name: "Store Sign", custom: true},
+  {name: "Banner", custom: true}
 ])
 
 postcard = Product.find_by(name: "Postcard")
-business_card = Product.find_by(name: "Business Cards")
+business_card = Product.find_by(name: "Business Card")
 
 #finishes
 

@@ -30,6 +30,16 @@ button {
 	margin:0 0 20px; 
 	width:200px;
 }
+textarea{
+	border:0; 
+	padding: .5em; 
+	font-size:1em; 
+	font-family:Arial, sans-serif; 
+	color: $regular-text; 
+	border:solid 1px #ccc; 
+	margin:0 0 20px; 
+ 
+}
 
 .order-form{
 	padding: 1em 2em;

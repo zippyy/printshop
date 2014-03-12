@@ -1,83 +1,53 @@
 <div class="main-grid">
 	<div class="add-item">
-		<h1 class="title">Order Form</h1>
+		<h2 class="title">Order Form</h2>
 		<%= form_for @cart_item do |f| %>
-	<div class="order-form">
-
-		
-
-
-			<div class="product-element">
-				<%= f.label :product_id %> <br>
-				<%= f.select :product_id, @products, prompt: '' %>
-			</div>
-
-	
-
-			<div id="standard-elements">
-				<div class="size-element">
-					<%= f.label :size_id %> <br>
-					<%= f.select :size_id, @sizes, {prompt: ''} , {disabled: true} %>
+			<div class="order-form">
+				<div class="product-element">
+					<%= f.label :product_id %> <br>
+					<%= f.select :product_id, @products, prompt: '' %>
 				</div>
 
-				<div class="finish-element">
-					<%= f.label :finish_id %> <br>
-					<%= f.select :finish_id, @finishes, {prompt: ''} , {disabled: true} %>
+				<div id="standard-elements">
+					<div class="size-element">
+						<%= f.label :size_id %> <br>
+						<%= f.select :size_id, @sizes, {prompt: ''} , {disabled: true} %>
+					</div>
+					<div class="finish-element">
+						<%= f.label :finish_id %> <br>
+						<%= f.select :finish_id, @finishes, {prompt: ''} , {disabled: true} %>
+					</div>
+					<div class="quantity-element">
+						<%= f.label :quantity_id %> <br>
+						<%= f.select :quantity_id, @quantities, {prompt: ''} , {disabled: true} %>
+					</div>
 				</div>
-
-				<div class="quantity-element">
-					<%= f.label :quantity_id %> <br>
-					<%= f.select :quantity_id, @quantities, {prompt: ''} , {disabled: true} %>
-				</div>
-
-			
-				
-			</div>
-
-
 				<div id="information-element">
 					<%= f.label :information %>
 					<%= f.text_area :information,  class: "information-text-area" %>
-
 				</div>
-				
-
-					
-
-				<div class="price-element">
-					<%= f.label :price_id %>
-				</div>
-
-				<div class="submit-element">
-					
-
-
-				</div>
-
-	</div> 
-	<br><br><br>
+				<div id="price-element"></div>
+				<div id="submit-element"></div>
+			</div> 
 		<% end %>
-
 	</div>
 	<div class="show-item">
 		<br><br><br>
 		<div class="order-summary">
-			<h2 class="title">Order Summary</h2>
-
+			<h4 class="title">Order Summary</h4>
 			<% if @cart_items.empty? %>
 				The cart is empty
 			<% else %>
 				<ol>
 					<% @cart_items.each do |item|	 %>
 						<div class="cart-item">
-							<%= item.quantity_quantity %> <br>
-							<%= item.product_name.pluralize %> <br>
-							<%= item.size_size%> <br>
-							<%= item.finish_finish %> 
-							$<%= item.price_id %> <br>
-
-							 		</li>
-							
+							<li>
+								<%= item.quantity_quantity %> <%= item.product_name.pluralize %> 
+								<% unless item.product.custom %>
+									( <%= item.size_size %>, <%= item.finish_finish %> ) - $<%= item.price_price %>
+								<% end %>
+								<br><%= item.information %>
+					 		</li>
 						</div>
 					<% end %>
 				</ol>

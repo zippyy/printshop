@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$('#cart_item_product_id').on('change', function(event) {
-		
+		$('#price-element, #submit-element').slideUp();
 		$('#cart_item_finish_id, #cart_item_quantity_id').prop('disabled', true);
 		$('#cart_item_finish_id, #cart_item_quantity_id').val(''); 
 		$('.button-element').remove();
@@ -18,7 +18,8 @@ $(document).ready(function(){
 	$(document).on('change', "#cart_item_size_id", function(event) {
 
 		$('#cart_item_finish_id, #cart_item_quantity_id').prop('disabled', true);
-		$('#cart_item_quantity_id').val(''); 
+		$('#cart_item_quantity_id').val('');
+		$('#price-element, #submit-element').slideUp(); 
 		$('.button-element').remove();
 
 		var params = "product_id=" + $('#cart_item_product_id').val();
@@ -34,7 +35,9 @@ $(document).ready(function(){
 	$(document).on('change', '#cart_item_finish_id', function(event) {
 		$('#cart_item_quantity_id').prop('disabled', true);
 		$('#cart_item_quantity_id').val(''); 
+		$('#price-element, #submit-element').slideUp();
 		$('.button-element').remove();
+		
 		var params = "product_id=" + $('#cart_item_product_id').val();
 		$.ajax({url: "/printshop/quantity_options",
 			format: 'js',
@@ -47,10 +50,10 @@ $(document).ready(function(){
 	$(document).on('change', '#cart_item_quantity_id', function(event) {
 		$('.button-element').remove();
 
-		 var product_id = $('#cart_item_product_id').val()
-		 var size_id = $('#cart_item_size_id').val();
-		 var finish_id = $('#cart_item_finish_id').val();
-		 var quantity_id = $('#cart_item_quantity_id').val();
+		var product_id = $('#cart_item_product_id').val()
+		var size_id = $('#cart_item_size_id').val();
+		var finish_id = $('#cart_item_finish_id').val();
+		var quantity_id = $('#cart_item_quantity_id').val();
 
 		$.ajax({
 			url: "/printshop/submit_options",

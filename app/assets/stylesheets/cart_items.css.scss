@@ -2,13 +2,12 @@
 	width: 70%;
 	text-align: right;
 	margin: 0 auto;
-	background: green;
+	// background: green;
 }
 
 .show-item{
 	width: 75%;
-	height:400px;
-	background: yellow;
+	margin: 0 auto;
 }
 
 .cart-item{
@@ -27,14 +26,14 @@
 }
 
 #standard-elements{
-	background: #00ffff;
+	// background: #00ffff;
 	display: none;
 	clear: both;
 }
 
 #information-element{
 	display: none;
-	background: yellow;
+	// background: yellow;
 }
 .information-text-area{
 	resize: none;
@@ -42,16 +41,16 @@
 }
 
 .product-element{
-	background: pink;
+	// background: pink;
 	height: 4em;
 }
-.price-element{
-	background: orange;
+#price-element{
+	// background: orange;
 	display: none;
 
 }
-.submit-element{
-	background: tomato;
+#submit-element{
+	// background: tomato;
 	height: 4em;
 	display: none;
 	line-height: 4em;

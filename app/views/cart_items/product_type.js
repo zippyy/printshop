@@ -1,4 +1,6 @@
 $('#standard-elements').slideUp();
-$('#information-element, .price-element').slideDown();
+$('#price-element').html("<h4>Pricing will be discussed</h4>");
+$('#information-element, #price-element, #submit-element').slideDown();
 $('.information-text-area').attr("placeholder", "Tell us more about this custom item");
-$('.price-element').html("<h6>Price</h6>Pricing will be discussed");
+$('#submit-element').html('<%=j render partial: "add_item_button" %>');
+return false;
