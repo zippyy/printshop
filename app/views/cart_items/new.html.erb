@@ -5,15 +5,17 @@
 	<div class="order-form">
 		<h2 class="title">Create Order</h2>
 
+		<div class="price-element">
+					<%= f.label :price_id %>
+		</div>
+
+
 			<div class="product-element">
 				<%= f.label :product_id %>
 				<%= f.select :product_id, @products, prompt: '' %>
 			</div>
 
-			<div class="custom_text_area">
-				THIS IS GOING TO BE THE TEXT AREA
-
-			</div>
+	
 
 			<div id="standard-elements">
 				<div class="size-element">
@@ -31,11 +33,17 @@
 					<%= f.select :quantity_id, @quantities, {prompt: ''} , {disabled: true} %>
 				</div>
 
-					<div class="price-element">
-					<%= f.label :price_id %>
-					<%= f.text_field :price_id %>
-				</div>
+					
+
+
 			</div>
+
+				<div id="custom-text-area">
+					<%= f.label :information %>
+					<%= f.text_area :information,  class: "cart-information" %>
+
+				</div>
+
 	</div> 
 	<br><br><br>
 		<% end %>

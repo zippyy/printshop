@@ -1,1 +1,2 @@
-alert("yoyo");
+$('#standard-elements').slideUp();
+$('#custom-text-area').slideDown();

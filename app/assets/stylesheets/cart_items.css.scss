@@ -1,12 +1,11 @@
 .add-item{
-	float: left;
-	width: 50%;
+	width: 70%;
 	text-align: right;
-	margin: 0;
+	margin: 0 auto;
+	background: green;
 }
 
 .show-item{
-	float: right;
 	width: 50%;
 	height:400px;
 }
@@ -32,4 +31,16 @@
 #standard-elements{
 	background: #00ffff;
 	display: none;
+}
+
+#custom-text-area{
+	display: none;
+	height: 100px;
+
+	background: yellow;	
+}
+
+.price-element{
+	background: orange;
+	width: 200px;
 }
