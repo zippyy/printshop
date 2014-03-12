@@ -6,8 +6,9 @@
 }
 
 .show-item{
-	width: 50%;
+	width: 75%;
 	height:400px;
+	background: yellow;
 }
 
 .cart-item{
@@ -24,23 +25,34 @@
 	border-radius: 10px;
 	border: 1px solid #e6e6e6;
 }
-.price{
-	float: right;
-}
 
 #standard-elements{
 	background: #00ffff;
 	display: none;
+	clear: both;
 }
 
-#custom-text-area{
+#information-element{
 	display: none;
-	height: 100px;
-
-	background: yellow;	
+	background: yellow;
+}
+.information-text-area{
+	resize: none;
+	height: 6em;	
 }
 
+.product-element{
+	background: pink;
+	height: 4em;
+}
 .price-element{
 	background: orange;
-	width: 200px;
+	display: none;
+
+}
+.submit-element{
+	background: tomato;
+	height: 4em;
+	display: none;
+	line-height: 4em;
 }

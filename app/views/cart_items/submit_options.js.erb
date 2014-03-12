@@ -1,2 +1,4 @@
-$('.price-element').after('<%=j render partial: "add_item_button" %>');
+$('.price-element, .submit-element').slideDown();
+$('.price-element').html('<%=j render partial: "add_price" %>')
+$('.submit-element').html('<%=j render partial: "add_item_button" %>');
 return false;

@@ -1,17 +1,14 @@
 <div class="main-grid">
 	<div class="add-item">
-		<br><br><br>
+		<h1 class="title">Order Form</h1>
 		<%= form_for @cart_item do |f| %>
 	<div class="order-form">
-		<h2 class="title">Create Order</h2>
 
-		<div class="price-element">
-					<%= f.label :price_id %>
-		</div>
+		
 
 
 			<div class="product-element">
-				<%= f.label :product_id %>
+				<%= f.label :product_id %> <br>
 				<%= f.select :product_id, @products, prompt: '' %>
 			</div>
 
@@ -19,28 +16,41 @@
 
 			<div id="standard-elements">
 				<div class="size-element">
-					<%= f.label :size_id %>
+					<%= f.label :size_id %> <br>
 					<%= f.select :size_id, @sizes, {prompt: ''} , {disabled: true} %>
 				</div>
 
 				<div class="finish-element">
-					<%= f.label :finish_id %>
+					<%= f.label :finish_id %> <br>
 					<%= f.select :finish_id, @finishes, {prompt: ''} , {disabled: true} %>
 				</div>
 
 				<div class="quantity-element">
-					<%= f.label :quantity_id %>
+					<%= f.label :quantity_id %> <br>
 					<%= f.select :quantity_id, @quantities, {prompt: ''} , {disabled: true} %>
 				</div>
 
-					
-
-
+			
+				
 			</div>
 
-				<div id="custom-text-area">
+
+				<div id="information-element">
 					<%= f.label :information %>
-					<%= f.text_area :information,  class: "cart-information" %>
+					<%= f.text_area :information,  class: "information-text-area" %>
+
+				</div>
+				
+
+					
+
+				<div class="price-element">
+					<%= f.label :price_id %>
+				</div>
+
+				<div class="submit-element">
+					
+
 
 				</div>
 
@@ -60,8 +70,13 @@
 				<ol>
 					<% @cart_items.each do |item|	 %>
 						<div class="cart-item">
-							<li><%= item.quantity_quantity %> <%= item.product_name.pluralize %> ( <%= item.size_size%>, <%= item.finish_finish %> )
-							 <div class="price">$<%= item.price_id %></div>	</li>
+							<%= item.quantity_quantity %> <br>
+							<%= item.product_name.pluralize %> <br>
+							<%= item.size_size%> <br>
+							<%= item.finish_finish %> 
+							$<%= item.price_id %> <br>
+
+							 		</li>
 							
 						</div>
 					<% end %>

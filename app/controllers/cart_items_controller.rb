@@ -15,6 +15,7 @@ class CartItemsController < ApplicationController
   end
 
   def create
+    debugger
   	@cart_item = CartItem.new(cart_item_params)
   	
   	if @cart_item.save
@@ -56,6 +57,10 @@ class CartItemsController < ApplicationController
   end
 
   def submit_options
+
+   @price = Price.find_by(product_id: params[:product_id], size_id: params[:size_id], finish_id: params[:finish_id], quantity_id: params[:quantity_id])
+
+
     respond_to do |format|
        format.js {  }
     end    
