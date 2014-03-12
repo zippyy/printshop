@@ -29,21 +29,22 @@ class CartItemsController < ApplicationController
     
     respond_to do |format|
       if @product.custom
-        format.js {}
+          format.js {}
       else
-        size_options
+        @sizes = @product.sizes.map { |e| [e.size, e.id] }
+        format.js { render "size_options"}
+         
       end
-    end
+        end
   end
 
-  def size_options
-    @product = Product.find(params[:product_id])
-    @sizes = @product.sizes.map { |e| [e.size, e.id] }
+  # def size_options
+  #   @product = Product.find(params[:product_id])
    
-    respond_to do |format|
-      format.js {  }
-    end
-  end
+  #   respond_to do |format|
+  #     format.js {  }
+  #   end
+  # end
 
   def finish_options
     @product = Product.find(params[:product_id])
