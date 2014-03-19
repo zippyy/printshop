@@ -10,6 +10,9 @@ input{
 }
 
 select {
+ -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
   border:0; 
 	padding: .5em; 
 	font-size:1em; 

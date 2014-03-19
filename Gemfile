@@ -13,6 +13,10 @@ gem 'nested_form'
 gem 'font-awesome-rails'
 gem 'font-kit-rails'
 
+group :assets do
+  gem 'modernizr-rails'
+end
+
 group :development do
 	gem 'capistrano'
 	gem 'quiet_assets'
