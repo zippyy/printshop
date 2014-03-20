@@ -55,7 +55,7 @@ $(document).ready(function(){
 		event.preventDefault()
 	});
 
-	$(document).on('change', '#cart_item_quantity_id', function(event) {
+	$(document).on('change keyup', '#cart_item_quantity_id', function(event) {
 		$('.button-element').remove();
 
 		var product_id = $('#cart_item_product_id').val()
