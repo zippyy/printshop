@@ -25,6 +25,7 @@ group :development do
 	gem 'binding_of_caller'
 	gem 'debugger'
 	gem 'seed_dump'
+	gem 'letter_opener'
 end
 
 group :test do

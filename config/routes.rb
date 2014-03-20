@@ -4,7 +4,15 @@ Printshop::Application.routes.draw do
   resources :categories
   resources :products
   resources :cart_items
+  resources :password_resets
+  resources :users
+  resources :sessions
 
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
+  
   get 'size_options' => 'cart_items#size_options'
   get 'finish_options' => 'cart_items#finish_options'
 	get 'quantity_options' => 'cart_items#quantity_options'
