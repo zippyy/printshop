@@ -4,6 +4,14 @@ Finish.destroy_all
 Quantity.destroy_all
 Size.destroy_all
 Price.destroy_all
+User.destroy_all
+
+User.create!([
+  {email: "asdf@adfactor.com",
+  password: "asdf",
+  password_confirmation: "asdf",
+  owner: true}
+  ])
 
 Product.create!([
   {name: "Postcard", custom: false},

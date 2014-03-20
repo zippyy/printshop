@@ -8,10 +8,9 @@ Printshop::Application.routes.draw do
   resources :users
   resources :sessions
 
-  get "logout" => "sessions#destroy", :as => "logout"
-  get "ownerlogin" => "sessions#new", :as => "ownerlogin"
-  get "signup" => "users#new", :as => "signup"
-
+  get 'logout' => 'sessions#destroy', as: 'logout'
+  get 'ownerlogin' => 'sessions#new', as: 'ownerlogin'
+  get 'signup' => 'users#new', as: 'signup'
   
   get 'size_options' => 'cart_items#size_options'
   get 'finish_options' => 'cart_items#finish_options'
@@ -19,7 +18,8 @@ Printshop::Application.routes.draw do
 	get 'submit_options' => 'cart_items#submit_options'
   get 'product_type' => 'cart_items#product_type'
 
-  get "welcome/index"
-  root :to => "welcome#index"
+  get 'dashboard' => 'dashboard#index', as: 'dashboard'
+  get 'welcome/index'
+  root :to => 'welcome#index'
 
 end
