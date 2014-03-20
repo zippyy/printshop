@@ -24,9 +24,13 @@
 	<div class="main-grid">
 		<div class="tag-line">
 		</div>
-		<div class="nav-bar">
-		PRODUCTS & SERVICES | ABOUT US
-		</div>
+
+		<% if current_user && current_user.owner  %>
+			<%= render 'shared/owner_nav' %>
+		<% else %>
+			<%= render 'shared/normal_nav' %>
+		<% end %>
+	
 	</div>
 </div>
 

@@ -38,6 +38,18 @@ h4{
 	text-align: center;
 }
 
+a:link.nav-link{
+	color: $top-bar;
+	text-decoration:none;
+}
+a:visited.nav-link{
+	color: $top-bar;
+	text-decoration:none;	
+}
+a:active.nav-link{
+	color: $top-bar;
+	text-decoration:none;
+}
 
 a:link{
 	color: $regular-text;
