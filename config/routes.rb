@@ -19,6 +19,8 @@ Printshop::Application.routes.draw do
   get 'product_type' => 'cart_items#product_type'
 
   get 'dashboard' => 'dashboard#index', as: 'dashboard'
+  get 'services' => 'welcome#services', as: 'services'
+  get 'about' => 'welcome#about', as: 'about'
   get 'welcome/index'
   root :to => 'welcome#index'
 

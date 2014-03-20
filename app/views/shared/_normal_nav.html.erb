@@ -1,3 +1,12 @@
 <div class="nav-bar">
-	PRODUCTS | SERVICES | ABOUT US
+	<div class="right-nav">
+		<%= link_to "HOME", root_path, class: "nav-link" %>
+		&nbsp&nbsp|&nbsp&nbsp 
+		<%= link_to "PRODUCTS & SERVICES", services_path, class: "nav-link" %>
+		&nbsp&nbsp|&nbsp&nbsp 
+		<%= link_to "ABOUT US", about_path, class: "nav-link" %>
+	</div>
+	<div class="left-nav">
+		PRINT & DESIGN - SMART PROMO SOLUTIONS SINCE 1984
+	</div>
 </div>

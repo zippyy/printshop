@@ -2,6 +2,10 @@ body{
 	font-family: $regular-font;
 	background: $offwhite;
 }
+p{
+	font-size: 1.1em;
+	padding: 1em;
+}
 
 .header {
 	height: 7.5em;
@@ -49,6 +53,10 @@ a:visited.nav-link{
 a:active.nav-link{
 	color: $top-bar;
 	text-decoration:none;
+}
+
+a:hover.nav-link{
+	color: tomato;
 }
 
 a:link{
