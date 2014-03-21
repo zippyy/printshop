@@ -1,8 +1,6 @@
 class CartItem < ActiveRecord::Base
 
 	validates :product_id, :presence => true,  numericality: { only_integer: true }
-
-
 	validates :size_id, numericality: { only_integer: true }, :allow_nil => true
 	validates :finish_id, numericality: { only_integer: true }, :allow_nil => true
 	validates :quantity_id, numericality: { only_integer: true }, :allow_nil => true

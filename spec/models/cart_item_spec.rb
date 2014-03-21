@@ -2,47 +2,28 @@ require 'spec_helper'
 
 describe CartItem do
  
- 	it "has a valid factory" do
- 		create(:cart_item).should be_valid
- 	end
-
- 	let(:cart_item) { create(:cart_item) }
-
- 	it "belongs to product" do 
-		cart_item.should belong_to(:product)
-	end
-
-	it "belongs to size" do
-		cart_item.should belong_to(:size)
-	end
-
-	it "belongs to finsih" do
-		cart_item.should belong_to(:finish)
-	end
-
-	it "belongs to quantity" do
-		cart_item.should belong_to(:quantity)
-	end
-
-	it "belongs to price" do
-		cart_item.should belong_to(:price)
-	end
+	it { should belong_to :product }
+	it { should belong_to :size }
+	it { should belong_to :finish }
+	it { should belong_to :quantity }
+	it { should belong_to :price }
 
 	context "custom items" do
-		it "can have no size_id" do
+		
+		it "has no size_id" do
 			build(:cart_item, size_id: nil).should be_valid
 		end
 
-		it "can have no finish_id" do
+		it "has no finish_id" do
 			build(:cart_item, finish_id: nil).should be_valid
 		end
 
-		it "can have no quantiy_id" do
-			build(:cart_item, finish_id: nil).should be_valid
+		it "has no quantiy_id" do
+			build(:cart_item, quantity_id: nil).should be_valid
 		end
 
-		it "can have no price_id" do
-			build(:cart_item, finish_id: nil).should be_valid
+		it "has no price_id" do
+			build(:cart_item, price_id: nil).should be_valid
 		end
 	end
 
@@ -56,13 +37,14 @@ describe CartItem do
 		end
 
 		it "has a numeric quantiy_id" do
-			build(:cart_item, finish_id: "a").should_not be_valid
+			build(:cart_item, quantity_id: "a").should_not be_valid
 		end
 
 		it "has a numeric price_id" do
-			build(:cart_item, finish_id: "a").should_not be_valid
+			build(:cart_item, price_id: "a").should_not be_valid
 		end
 	end
 
 
+	
 end
