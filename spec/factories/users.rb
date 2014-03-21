@@ -1,6 +1,7 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
-  factory :user do
+  factory :user do |f|
+		f.email "pat@gmail.com"
+		f.password "secret"
+		after(:create) { |u| u.password_confirmation = u.password }
   end
 end

@@ -4,6 +4,7 @@ Printshop::Application.routes.draw do
   resources :categories
   resources :products
   resources :cart_items
+
   resources :password_resets
   resources :users
   resources :sessions

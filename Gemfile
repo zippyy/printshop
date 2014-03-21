@@ -11,6 +11,7 @@ gem 'unicorn'
 gem 'sorcery'
 gem 'nested_form'
 gem 'font-awesome-rails'
+gem 'debugger'
 
 group :assets do
   gem 'modernizr-rails'
@@ -20,15 +21,14 @@ group :development do
 	gem 'capistrano'
 	gem 'quiet_assets'
 	gem 'better_errors'
-	gem 'rspec-rails'
-	gem 'shoulda-matchers'
 	gem 'binding_of_caller'
-	gem 'debugger'
 	gem 'seed_dump'
 	gem 'letter_opener'
 end
 
 group :test do
+	gem 'rspec-rails'
+	gem 'shoulda-matchers'
 	gem 'faker'
 	gem 'capybara'
 	gem 'guard-rspec'
