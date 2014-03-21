@@ -1,9 +1,5 @@
 class CartItemsController < ApplicationController
   
-  def index
-  	@cart_items = CartItem.all
-  end
-
   def new
   	@cart_item = CartItem.new
     @cart_items = CartItem.all
