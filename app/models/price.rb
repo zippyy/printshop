@@ -1,8 +1,13 @@
 class Price < ActiveRecord::Base
 
-	belongs_to :prodcuts
-	belongs_to :sizes
-	belongs_to :quanities
-	belongs_to :finishes
+	validates :product_id, :presence => true,  numericality: { only_integer: true }
+	validates :size_id, :presence => true,  numericality: { only_integer: true }
+	validates :quantity_id, :presence => true,  numericality: { only_integer: true }
+	validates :finish_id, :presence => true,  numericality: { only_integer: true }
+
+	belongs_to :product
+	belongs_to :size
+	belongs_to :quantity
+	belongs_to :finish
 
 end

@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :price do
-    price 1
+    price 100
     product_id 1
     size_id 1
     finish_id 1
-    quantity ""
+    quantity_id 1
   end
 end
