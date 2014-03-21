@@ -8,10 +8,11 @@ www.pathann.com/printshop
 
 Working pages are
 
-www.pathann.com/printshop/  
-www.pathann.com/printshop/products
-www.pathann.com/printshop/products/new  
-www.pathann.com/printshop/prices  
+www.pathann.com/printshop/   
 www.pathann.com/printshop/cart_items/new
+
+www.pathann.com/printshop/ownerlogin
+
+use asdf@adfactor.com / asdf to login and see the beginning of the admin dasshboard.
 
 Work is continuing.  Live version was setup so client can see the progress.
