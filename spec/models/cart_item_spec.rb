@@ -12,6 +12,22 @@ describe CartItem do
 		cart_item.should belong_to(:product)
 	end
 
+	it "belongs to size" do
+		cart_item.should belong_to(:size)
+	end
+
+	it "belongs to finsih" do
+		cart_item.should belong_to(:finish)
+	end
+
+	it "belongs to quantity" do
+		cart_item.should belong_to(:quantity)
+	end
+
+	it "belongs to price" do
+		cart_item.should belong_to(:price)
+	end
+
 	context "custom items" do
 		it "can have no size_id" do
 			build(:cart_item, size_id: nil).should be_valid
