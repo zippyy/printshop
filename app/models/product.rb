@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
 
 	validates :name, :presence => true
+	validates :custom, :presence => true, :inclusion => {:in => [true, false]}
 
 	has_many :sizes, :inverse_of => :product
 	has_many :finishes, :inverse_of => :product
