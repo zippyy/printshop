@@ -5,7 +5,7 @@ FactoryGirl.define do
     product_id 1
     size_id 1
     finish_id 1
-    quantity_id ""
+    quantity_id 1
     price_id 1
   end
 end
