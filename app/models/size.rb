@@ -5,7 +5,7 @@ class Size < ActiveRecord::Base
 
 	
 	belongs_to :product,  inverse_of: :sizes
-	has_many :cart_items
-	has_many :prices
+	# has_many :cart_items
+	# has_many :prices
 
 end
