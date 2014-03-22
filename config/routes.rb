@@ -1,5 +1,8 @@
 Printshop::Application.routes.draw do
 
+
+  get "promo_items/new"
+  get "promo_items/index"
   resources :prices
   resources :categories
   resources :products

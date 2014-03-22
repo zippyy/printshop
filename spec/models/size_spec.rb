@@ -2,16 +2,10 @@ require 'spec_helper'
 
 describe Size do
 
-	it "has a valid factory" do
-		create(:size).should be_valid
-	end
-
-	it "belongs to a product" do
-		should belong_to(:product)
-	end
+	it { should belong_to(:product) }
 
 	describe "#create" do
-		it "is invalid when empty" do
+		it "is invalid without a size" do
 			build(:size, size: nil).should_not be_valid
 		end
 
@@ -20,4 +14,16 @@ describe Size do
 			build(:size, product_id: "a").should_not be_valid
 		end
 	end
+
+	describe '#destroy' do
+    before do
+      @size = create(:size)
+      @size_id = @size.id
+      @size.destroy
+    end
+
+    it 'is deleted correctly' do
+      Size.exists?(id: @size_id).should be_false
+    end
+  end
 end
