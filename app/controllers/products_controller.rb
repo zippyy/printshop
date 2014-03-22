@@ -38,14 +38,6 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @sizes = Size.where(product_id: @product.id)
-    @finishes = Finish.where(product_id: @product.id)
-    @quantities = Quantity.where(product_id: @product.id)
-    @prices = Price.where(product_id: @product.id)
-    @sizes.destroy_all
-    @finishes.destroy_all
-    @quantities.destroy_all
-    @prices.destroy_all
     @product.destroy
     redirect_to products_path
   end
