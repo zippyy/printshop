@@ -1,16 +1,13 @@
 Printshop::Application.routes.draw do
 
-
-  get "promo_items/new"
-  get "promo_items/index"
   resources :prices
   resources :categories
   resources :products
   resources :cart_items
-
   resources :password_resets
   resources :users
   resources :sessions
+  resources :promo_items
 
   get 'logout' => 'sessions#destroy', as: 'logout'
   get 'ownerlogin' => 'sessions#new', as: 'ownerlogin'
