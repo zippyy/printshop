@@ -44,7 +44,7 @@ describe PromoItemsController do
   end
 
   describe "POST '#create'" do
-    context "with valid atributes" do
+    context "with valid attributes" do
       it "saves the promo item to the database" do
         expect{ post :create, promo_item: attributes_for(:promo_item)
           }.to change(PromoItem,:count).by(1)
@@ -101,20 +101,20 @@ describe PromoItemsController do
       assigns(:promo_item).should eq(promo_item)
     end
 
-    context "with valid attributes" do
+    context "with valid atttributes" do
       it "changes promo_item attributes" do
         put :update, id: promo_item, promo_item: attributes_for(:promo_item, description: "new description") 
         promo_item.reload 
         promo_item.description.should eq("new description") 
       end
 
-      it "redirects to the updated promo_item page" do
+      it "redirects to the updated promo_items#index" do
         patch :update, id: promo_item, promo_item: attributes_for(:promo_item)
         response.should redirect_to promo_items_url
       end
     end
 
-    context "invalid attributes" do 
+    context "invalid atttributes" do 
 
       it "does not change promo_item attributes" do 
         patch :update, id: promo_item, promo_item: attributes_for(:promo_item, product_id: 'a', description: nil) 
@@ -136,13 +136,13 @@ describe PromoItemsController do
       assigns(:promo_item).should eq(promo_item)
     end
         
-    it "deletes the promo_item" do 
+    it "deletes the promo item" do 
       promo_item
       expect{ delete :destroy, id: promo_item 
         }.to change(PromoItem,:count).by(-1) 
     end 
 
-    it "redirects to artciles#index" do 
+    it "redirects to promo_items#index" do 
       delete :destroy, id: promo_item 
       response.should redirect_to promo_items_url 
     end 

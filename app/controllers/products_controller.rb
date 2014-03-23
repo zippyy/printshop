@@ -48,12 +48,12 @@ class ProductsController < ApplicationController
 	  params.require(:product).permit(:name, :custom, sizes_attributes: [:id, :product_id, :size, :_destroy], finishes_attributes: [:id, :product_id, :finish, :_destroy], quantities_attributes: [:id, :product_id, :quantity, :_destroy] )
   end
 
-  def question_params
-    params.require(:size).permit(:size, :product_id)
-  end
+  # def question_params
+  #   params.require(:size).permit(:size, :product_id)
+  # end
 
-  def answer_params
-    params.require(:finish).permit(:finish, :product_id)
-  end
+  # def answer_params
+  #   params.require(:finish).permit(:finish, :product_id)
+  # end
 
 end
