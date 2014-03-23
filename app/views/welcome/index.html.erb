@@ -2,38 +2,16 @@
 </div>
 
 <div class="main-grid welcome-content">
-	<div class="feature-item">
-		Postcards
-		<br><br><br>
-		<div class="feature-blurb">Some text</div>
-	</div>
-	<div class="feature-item">
-		Business Cards
-		<br><br><br>
-		<div class="feature-blurb">Some text</div>
-	</div>
-	<div class="feature-item">
-		Flyers
-		<br><br><br>
-		<div class="feature-blurb">Some text</div>
-	</div>
-	<div class="feature-item">
-		Banners
-		<br><br><br>
-		<div class="feature-blurb">Some text</div>
-	</div>
-	<div class="feature-item">
-		Large Signs
-		<br><br><br>
-		<div class="feature-blurb">Some text</div>
-	</div>
-	<div class="feature-item">
-		Anything
-		<br><br><br>
-		<div class="feature-blurb">Some text</div>
-	</div>
-
-
+	
+	<% @promo_items.each do |promo_item| %>
+		<div class="feature-item">
+			<%= promo_item.product_name %>
+			<br><br><br>
+			<div class="feature-blurb">
+				<%= promo_item.description %>
+			</div>
+		</div>
+	<% end %>
 </div>
 
 <div class="about-content">
