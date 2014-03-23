@@ -6,10 +6,11 @@ class PromoItemsController < ApplicationController
 
   def new
   	@promo_item = PromoItem.new
+    @products = Product.all.map { |e| [e.name, e.id] }.sort
 	end
 
 	def create
-			@promo_item = PromoItem.new(promo_item_params)
+		@promo_item = PromoItem.new(promo_item_params)
 
   	if @promo_item.save
   		redirect_to promo_items_url
@@ -20,13 +21,14 @@ class PromoItemsController < ApplicationController
 
 	def edit
 		@promo_item = PromoItem.find(params[:id])
+    @products = Product.all.map { |e| [e.name, e.id] }.sort
 	end
 
 	def update
 		@promo_item = PromoItem.find(params[:id])
 
 		if @promo_item.update_attributes(promo_item_params)
-      redirect_to promo_item_path(@promo_item) 
+      redirect_to promo_items_path 
     else
       render :edit
     end

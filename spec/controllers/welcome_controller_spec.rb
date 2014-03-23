@@ -7,6 +7,8 @@ describe WelcomeController do
       get 'index'
       response.should be_success
     end
+
+    it 
   end
 
   describe "GET 'services'" do

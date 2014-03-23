@@ -4,5 +4,8 @@ class PromoItem < ActiveRecord::Base
 	validates :description, presence: true
 
 	belongs_to :product
+
+	delegate :name, :to => :product, :prefix => true
+
 	
 end

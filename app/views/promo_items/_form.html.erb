@@ -1,0 +1,28 @@
+<div class="form">
+	<%= form_for @promo_item do |f| %>
+	  <% if @promo_item.errors.any? %>
+			<div class="error_messages">
+	      <h2><%= pluralize(@promo_item.errors.count, "error") %> prohibited this promo_item from being saved:</h2>
+	      <ul>
+		      <% @promo_item.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+		<div class="promo_item-name-type">
+			<%= f.label :product_id, "Product Name" %><br />
+			<%= f.select :product_id, @products, prompt: '' %>
+	  </div>
+
+		<div class="promo_item-name-type">
+			<%= f.label :description, "Description" %><br />
+			<%= f.text_field :description %>
+		</div>
+	  
+	  <div class="promo_item-submit">
+	    <%= f.submit "Submit", class: "product-button" %>
+	  </div>
+	<% end %>
+</div>

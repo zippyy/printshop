@@ -1,2 +1,17 @@
-<h1>PromoItems#index</h1>
-<p>Find me in app/views/promo_items/index.html.erb</p>
+<div class="main-grid">
+	<h1>Front Page Promotional Items</h1>
+
+	<% if @promo_items.empty? %>
+		There are no promotional items. <br><br>
+		<%= link_to "Create One", new_promo_item_path %>
+	<% else %>
+		<% @promo_items.each do |promo_item| %>
+			<%= promo_item.product_name %> <br>
+			<%= promo_item.description %>
+			<%= link_to "Edit", edit_promo_item_path(promo_item) %>
+			<%= link_to "Delete", promo_item, :method=>:delete, :class=>:destroy, confirm: "Really delete promotional item?" %>
+			<br> <br>	
+		<% end %>
+		<%= link_to "Create One", new_promo_item_path %>
+	<% end %>	
+</div>

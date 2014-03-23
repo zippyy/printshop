@@ -3,6 +3,7 @@ require 'spec_helper'
 describe PromoItemsController do
 
   let(:promo_item) {create(:promo_item)}
+  let(:product) {create(:product)}
 
   describe "GET '#index'" do
     it "returns http success" do
@@ -27,14 +28,19 @@ describe PromoItemsController do
       response.should be_success
     end
 
-    it "renders the :index view" do
+    it "renders the :new view" do
       get :new
       response.should render_template :new
     end 
-    # it "creates a new promo item" do
-    #   # promo_item = PromoItem.new
-    #   assigns(:promo_item).should be_kind_of(PromoItem)
-    # end
+    it "maps an array of product name and id arrays" do
+      get :new
+      assigns(:products).should_not be_nil
+    end
+
+    it "creates a new promo item" do
+      get :new
+      assigns(:promo_item).should be_kind_of(PromoItem)
+    end
   end
 
   describe "POST '#create'" do
@@ -69,6 +75,26 @@ describe PromoItemsController do
     end
   end
 
+  describe "GET '#edit'" do
+    it "returns http success" do
+      get 'edit', id: promo_item
+      response.should be_success
+    end
+
+    it "renders the :edit view" do
+      get :edit, id: promo_item
+      response.should render_template :edit
+    end 
+    it "assigns the promo item to @promo_item" do
+      get :edit, id: promo_item
+      assigns(:promo_item).should eq(promo_item)
+    end
+    it "maps an array of product name and id arrays" do
+      get :edit, id: promo_item
+      assigns(:products).should_not be_nil
+    end
+  end
+
   describe "PATCH '#update'" do
     it "locates the correct promo item" do
       put :update, id: promo_item, promo_item: attributes_for(:promo_item) 
@@ -84,7 +110,7 @@ describe PromoItemsController do
 
       it "redirects to the updated promo_item page" do
         patch :update, id: promo_item, promo_item: attributes_for(:promo_item)
-        response.should redirect_to promo_item
+        response.should redirect_to promo_items_url
       end
     end
 
@@ -105,6 +131,10 @@ describe PromoItemsController do
   end
 
   describe "DELETE '#destroy'" do 
+    it "locates the correct promo item" do
+      put :update, id: promo_item, promo_item: attributes_for(:promo_item) 
+      assigns(:promo_item).should eq(promo_item)
+    end
         
     it "deletes the promo_item" do 
       promo_item

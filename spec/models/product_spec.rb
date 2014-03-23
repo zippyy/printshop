@@ -7,7 +7,6 @@ describe Product do
 	it { should have_many(:quantities) }
 	it { should have_many(:cart_items) }
 	it { should have_many(:prices) }
-	# it { should have_many(:promo_items)}
 
 	describe "#create" do
 		it "is invalid without a name" do
