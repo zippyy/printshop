@@ -10,9 +10,5 @@ describe DashboardController do
       response.should be_success
     end
 
-    it "populates an array of products" do
-      get :index 
-      assigns(:products).should eq([product])
-    end
   end
 end

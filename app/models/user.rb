@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
 
 	validates :password, confirmation: true  
   validates :email, presence: true,  uniqueness: true, on: :create
+  validates :email, presence: true
 end

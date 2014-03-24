@@ -90,7 +90,7 @@ describe ProductsController do
     	get :edit, id: product
     	response.should render_template :edit
     end
-    it "creates finds the product to edit" do
+    it "finds the product to edit" do
       get :edit, id: product
       assigns(:product).should be_kind_of(Product)
     end

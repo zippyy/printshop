@@ -1,0 +1,9 @@
+<div class="main-grid">
+	<h1>Users List</h1>
+	<% @users.each do |user| %>
+		<%= user.email %> <br>
+		<%= link_to "Edit User", edit_user_path(user) %> <br>
+		<br>
+	<% end %>
+	<%= link_to "New User", new_user_path %>
+</div>
